@@ -38,9 +38,11 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox1.Location = new System.Drawing.Point(75, 103);
+            this.richTextBox1.Location = new System.Drawing.Point(101, 103);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ShowSelectionMargin = true;
             this.richTextBox1.Size = new System.Drawing.Size(551, 256);
             this.richTextBox1.TabIndex = 13;
@@ -50,7 +52,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(225, 74);
+            this.label1.Location = new System.Drawing.Point(251, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(236, 17);
             this.label1.TabIndex = 12;
@@ -58,7 +60,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(503, 427);
+            this.button2.Location = new System.Drawing.Point(529, 427);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(193, 23);
             this.button2.TabIndex = 11;
@@ -78,23 +80,25 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(269, 427);
+            this.button3.Location = new System.Drawing.Point(295, 427);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(228, 23);
             this.button3.TabIndex = 14;
             this.button3.Text = "Перейти к основной части эксперимента";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 462);
+            this.ClientSize = new System.Drawing.Size(734, 462);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Исследование избирательности восприятия";

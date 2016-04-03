@@ -99,7 +99,7 @@
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Control;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(207, 94);
+            this.textBox2.Location = new System.Drawing.Point(219, 94);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -109,7 +109,7 @@
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.Control;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(387, 94);
+            this.textBox3.Location = new System.Drawing.Point(411, 94);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(100, 20);
@@ -119,7 +119,7 @@
             // 
             this.textBox4.BackColor = System.Drawing.SystemColors.Control;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(567, 94);
+            this.textBox4.Location = new System.Drawing.Point(603, 94);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(100, 20);
@@ -129,7 +129,7 @@
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.Control;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(567, 154);
+            this.textBox5.Location = new System.Drawing.Point(603, 154);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(100, 20);
@@ -139,7 +139,7 @@
             // 
             this.textBox6.BackColor = System.Drawing.SystemColors.Control;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(387, 154);
+            this.textBox6.Location = new System.Drawing.Point(411, 154);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(100, 20);
@@ -149,7 +149,7 @@
             // 
             this.textBox7.BackColor = System.Drawing.SystemColors.Control;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(207, 154);
+            this.textBox7.Location = new System.Drawing.Point(219, 154);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(100, 20);
@@ -169,7 +169,7 @@
             // 
             this.textBox9.BackColor = System.Drawing.SystemColors.Control;
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(567, 214);
+            this.textBox9.Location = new System.Drawing.Point(603, 214);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(100, 20);
@@ -179,7 +179,7 @@
             // 
             this.textBox10.BackColor = System.Drawing.SystemColors.Control;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Location = new System.Drawing.Point(387, 214);
+            this.textBox10.Location = new System.Drawing.Point(411, 214);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(100, 20);
@@ -189,7 +189,7 @@
             // 
             this.textBox11.BackColor = System.Drawing.SystemColors.Control;
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Location = new System.Drawing.Point(207, 214);
+            this.textBox11.Location = new System.Drawing.Point(219, 214);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(100, 20);
@@ -209,7 +209,7 @@
             // 
             this.textBox13.BackColor = System.Drawing.SystemColors.Control;
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox13.Location = new System.Drawing.Point(567, 274);
+            this.textBox13.Location = new System.Drawing.Point(603, 274);
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(100, 20);
@@ -219,7 +219,7 @@
             // 
             this.textBox14.BackColor = System.Drawing.SystemColors.Control;
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox14.Location = new System.Drawing.Point(387, 274);
+            this.textBox14.Location = new System.Drawing.Point(411, 274);
             this.textBox14.Name = "textBox14";
             this.textBox14.ReadOnly = true;
             this.textBox14.Size = new System.Drawing.Size(100, 20);
@@ -229,7 +229,7 @@
             // 
             this.textBox15.BackColor = System.Drawing.SystemColors.Control;
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox15.Location = new System.Drawing.Point(207, 274);
+            this.textBox15.Location = new System.Drawing.Point(219, 274);
             this.textBox15.Name = "textBox15";
             this.textBox15.ReadOnly = true;
             this.textBox15.Size = new System.Drawing.Size(100, 20);
@@ -274,16 +274,17 @@
             this.button3.Text = "Ввод";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(553, 427);
+            this.button4.Location = new System.Drawing.Point(477, 415);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(143, 23);
+            this.button4.Size = new System.Drawing.Size(245, 35);
             this.button4.TabIndex = 22;
-            this.button4.Text = "Просмотр результатов";
+            this.button4.Text = "Закончить тренировочную серию и перейти к основному эксперименту";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox17
             // 
@@ -291,7 +292,7 @@
             this.textBox17.Location = new System.Drawing.Point(13, 374);
             this.textBox17.Name = "textBox17";
             this.textBox17.ShortcutsEnabled = false;
-            this.textBox17.Size = new System.Drawing.Size(683, 20);
+            this.textBox17.Size = new System.Drawing.Size(709, 20);
             this.textBox17.TabIndex = 23;
             this.textBox17.Visible = false;
             // 
@@ -309,7 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 462);
+            this.ClientSize = new System.Drawing.Size(734, 462);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox17);
             this.Controls.Add(this.button4);
@@ -335,7 +336,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form6";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Исследование избирательности восприятия";
             this.ResumeLayout(false);
             this.PerformLayout();

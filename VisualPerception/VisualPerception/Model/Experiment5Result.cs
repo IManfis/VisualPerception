@@ -22,6 +22,8 @@ namespace VisualPerception.Model
         public int NumberGroupsWithWord { get; set; }
         public int RelativeDistributionWord { get; set; }
         public int NumberGroupsHallmark { get; set; }
+        public int NumberDisplay { get; set; }
+        public int AllNumberDisplay { get; set; }
     
         public virtual User User { get; set; }
     }

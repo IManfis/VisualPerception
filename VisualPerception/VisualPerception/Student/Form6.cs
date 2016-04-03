@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using Timer = System.Windows.Forms.Timer;
+using VisualPerception.Model;
 
 namespace VisualPerception
 {
@@ -22,6 +24,8 @@ namespace VisualPerception
 
         private void button2_Click(object sender, EventArgs e)
         {
+            button2.Visible = false;
+            unShow();
             text();
             textboxUpdate();
             Thread.Sleep(2000);
@@ -31,22 +35,41 @@ namespace VisualPerception
 
         private void text()
         {
-            textBox1.Text = "2222";
-            textBox2.Text = "2222";
-            textBox3.Text = "2222";
-            textBox4.Text = "2222";
-            textBox5.Text = "2222";
-            textBox6.Text = "2222";
-            textBox7.Text = "2222";
-            textBox8.Text = "2222";
-            textBox9.Text = "2222";
-            textBox10.Text = "2222";
-            textBox11.Text = "2222";
-            textBox12.Text = "2222";
-            textBox13.Text = "2222";
-            textBox14.Text = "2222";
-            textBox15.Text = "2222";
-            textBox16.Text = "2222";
+            var context = new VisualPerceptionContext();
+            var stimulModel = context.ExperimentData.ToList();
+            Random random = new Random();
+            int k;
+            var lst = new List<string>();
+
+            for (var i = 0; i < 16; i++)
+            {
+                while (true)
+                {
+                    k = random.Next(stimulModel.Count);
+                    if (!lst.Any(x => x.Equals(stimulModel[k].Stimul)))
+                    {
+                        lst.Add(stimulModel[k].Stimul);
+                        break;
+                    }
+                }
+            }
+
+            textBox1.Text = lst[0];
+            textBox2.Text = lst[1];
+            textBox3.Text = lst[2];
+            textBox4.Text = lst[3];
+            textBox5.Text = lst[4];
+            textBox6.Text = lst[5];
+            textBox7.Text = lst[6];
+            textBox8.Text = lst[7];
+            textBox9.Text = lst[8];
+            textBox10.Text = lst[9];
+            textBox11.Text = lst[10];
+            textBox12.Text = lst[11];
+            textBox13.Text = lst[12];
+            textBox14.Text = lst[13];
+            textBox15.Text = lst[14];
+            textBox16.Text = lst[15];
         }
 
         private void textboxUpdate()
@@ -94,6 +117,26 @@ namespace VisualPerception
             label4.Visible = true;
             textBox17.Visible = true;
             button3.Visible = true;
+        }
+
+        private void unShow()
+        {
+            label4.Visible = false;
+            textBox17.Visible = false;
+            button3.Visible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button2_Click(sender, e);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var nForm = new Form7();
+            nForm.FormClosed += (o, ep) => this.Close();
+            nForm.Show();
+            this.Hide();
         }
     }
 }

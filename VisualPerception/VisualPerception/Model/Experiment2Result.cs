@@ -21,6 +21,8 @@ namespace VisualPerception.Model
         public int NumberReproducedOfIncentive { get; set; }
         public int NumberGroupsWithWord { get; set; }
         public int RelativeDistributionWord { get; set; }
+        public int NumberDisplay { get; set; }
+        public int AllNumberDisplay { get; set; }
     
         public virtual User User { get; set; }
     }
