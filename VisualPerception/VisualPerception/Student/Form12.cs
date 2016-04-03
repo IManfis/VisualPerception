@@ -326,7 +326,7 @@ namespace VisualPerception.Student
                 NumberDisplay = Number,
                 AllNumberDisplay = int.Parse(presenting)
             });
-            context.SaveChanges();
+            //context.SaveChanges();
 
             Number++;
             Thread.Sleep(1000);
@@ -435,6 +435,14 @@ namespace VisualPerception.Student
             }
 
             return numberOfGroups;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var nForm = new Form13();
+            nForm.FormClosed += (o, ep) => this.Close();
+            nForm.Show();
+            this.Hide();
         }
     }
 }

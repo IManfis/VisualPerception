@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="VisualPerceptionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="VisualPerceptionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Experiment1Result">
           <Key>
             <PropertyRef Name="Id" />
@@ -196,7 +196,8 @@
             <End Role="Experiment5Result" EntitySet="Experiment5Result" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VisualPerceptionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -209,9 +210,9 @@
           <Property Name="ProvidedIncentive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ReproducedIncentive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NumberReproducedOfIncentive" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Experiment1Result_User" FromRole="Experiment1Result" ToRole="User" />
           <Property Name="NumberDisplay" Type="Int32" Nullable="false" />
           <Property Name="AllNumberDisplay" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Experiment1Result_User" FromRole="Experiment1Result" ToRole="User" />
         </EntityType>
         <EntityType Name="Experiment2Result">
           <Key>
@@ -223,10 +224,10 @@
           <Property Name="ReproducedIncentive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NumberReproducedOfIncentive" Type="Int32" Nullable="false" />
           <Property Name="NumberGroupsWithWord" Type="Int32" Nullable="false" />
-          <Property Name="RelativeDistributionWord" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Experiment2Result_User" FromRole="Experiment2Result" ToRole="User" />
+          <Property Name="RelativeDistributionWord" Type="Double" Nullable="false" />
           <Property Name="NumberDisplay" Type="Int32" Nullable="false" />
           <Property Name="AllNumberDisplay" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Experiment2Result_User" FromRole="Experiment2Result" ToRole="User" />
         </EntityType>
         <EntityType Name="Experiment3Result">
           <Key>
@@ -238,9 +239,9 @@
           <Property Name="ReproducedIncentive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NumberReproducedOfIncentive" Type="Int32" Nullable="false" />
           <Property Name="PossessesHallmark" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Experiment3Result_User" FromRole="Experiment3Result" ToRole="User" />
           <Property Name="NumberDisplay" Type="Int32" Nullable="false" />
           <Property Name="AllNumberDisplay" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Experiment3Result_User" FromRole="Experiment3Result" ToRole="User" />
         </EntityType>
         <EntityType Name="Experiment4Result">
           <Key>
@@ -252,9 +253,9 @@
           <Property Name="ReproducedIncentive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NumberReproducedOfIncentive" Type="Int32" Nullable="false" />
           <Property Name="PossessesHallmark" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Experiment4Result_User" FromRole="Experiment4Result" ToRole="User" />
           <Property Name="NumberDisplay" Type="Int32" Nullable="false" />
           <Property Name="AllNumberDisplay" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Experiment4Result_User" FromRole="Experiment4Result" ToRole="User" />
         </EntityType>
         <EntityType Name="Experiment5Result">
           <Key>
@@ -268,9 +269,9 @@
           <Property Name="NumberGroupsWithWord" Type="Int32" Nullable="false" />
           <Property Name="RelativeDistributionWord" Type="Int32" Nullable="false" />
           <Property Name="NumberGroupsHallmark" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Experiment5Result_User" FromRole="Experiment5Result" ToRole="User" />
           <Property Name="NumberDisplay" Type="Int32" Nullable="false" />
           <Property Name="AllNumberDisplay" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Experiment5Result_User" FromRole="Experiment5Result" ToRole="User" />
         </EntityType>
         <EntityType Name="ExperimentData">
           <Key>
@@ -410,21 +411,19 @@
           <EntitySetMapping Name="Experiment1Result">
             <EntityTypeMapping TypeName="VisualPerceptionModel.Experiment1Result">
               <MappingFragment StoreEntitySet="Experiment1Result">
-                <ScalarProperty Name="AllNumberDisplay" ColumnName="AllNumberDisplay" />
-                <ScalarProperty Name="NumberDisplay" ColumnName="NumberDisplay" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="ProvidedIncentive" ColumnName="ProvidedIncentive" />
                 <ScalarProperty Name="ReproducedIncentive" ColumnName="ReproducedIncentive" />
                 <ScalarProperty Name="NumberReproducedOfIncentive" ColumnName="NumberReproducedOfIncentive" />
+                <ScalarProperty Name="NumberDisplay" ColumnName="NumberDisplay" />
+                <ScalarProperty Name="AllNumberDisplay" ColumnName="AllNumberDisplay" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Experiment2Result">
             <EntityTypeMapping TypeName="VisualPerceptionModel.Experiment2Result">
               <MappingFragment StoreEntitySet="Experiment2Result">
-                <ScalarProperty Name="AllNumberDisplay" ColumnName="AllNumberDisplay" />
-                <ScalarProperty Name="NumberDisplay" ColumnName="NumberDisplay" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="ProvidedIncentive" ColumnName="ProvidedIncentive" />
@@ -432,42 +431,42 @@
                 <ScalarProperty Name="NumberReproducedOfIncentive" ColumnName="NumberReproducedOfIncentive" />
                 <ScalarProperty Name="NumberGroupsWithWord" ColumnName="NumberGroupsWithWord" />
                 <ScalarProperty Name="RelativeDistributionWord" ColumnName="RelativeDistributionWord" />
+                <ScalarProperty Name="NumberDisplay" ColumnName="NumberDisplay" />
+                <ScalarProperty Name="AllNumberDisplay" ColumnName="AllNumberDisplay" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Experiment3Result">
             <EntityTypeMapping TypeName="VisualPerceptionModel.Experiment3Result">
               <MappingFragment StoreEntitySet="Experiment3Result">
-                <ScalarProperty Name="AllNumberDisplay" ColumnName="AllNumberDisplay" />
-                <ScalarProperty Name="NumberDisplay" ColumnName="NumberDisplay" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="ProvidedIncentive" ColumnName="ProvidedIncentive" />
                 <ScalarProperty Name="ReproducedIncentive" ColumnName="ReproducedIncentive" />
                 <ScalarProperty Name="NumberReproducedOfIncentive" ColumnName="NumberReproducedOfIncentive" />
                 <ScalarProperty Name="PossessesHallmark" ColumnName="PossessesHallmark" />
+                <ScalarProperty Name="NumberDisplay" ColumnName="NumberDisplay" />
+                <ScalarProperty Name="AllNumberDisplay" ColumnName="AllNumberDisplay" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Experiment4Result">
             <EntityTypeMapping TypeName="VisualPerceptionModel.Experiment4Result">
               <MappingFragment StoreEntitySet="Experiment4Result">
-                <ScalarProperty Name="AllNumberDisplay" ColumnName="AllNumberDisplay" />
-                <ScalarProperty Name="NumberDisplay" ColumnName="NumberDisplay" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="ProvidedIncentive" ColumnName="ProvidedIncentive" />
                 <ScalarProperty Name="ReproducedIncentive" ColumnName="ReproducedIncentive" />
                 <ScalarProperty Name="NumberReproducedOfIncentive" ColumnName="NumberReproducedOfIncentive" />
                 <ScalarProperty Name="PossessesHallmark" ColumnName="PossessesHallmark" />
+                <ScalarProperty Name="NumberDisplay" ColumnName="NumberDisplay" />
+                <ScalarProperty Name="AllNumberDisplay" ColumnName="AllNumberDisplay" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Experiment5Result">
             <EntityTypeMapping TypeName="VisualPerceptionModel.Experiment5Result">
               <MappingFragment StoreEntitySet="Experiment5Result">
-                <ScalarProperty Name="AllNumberDisplay" ColumnName="AllNumberDisplay" />
-                <ScalarProperty Name="NumberDisplay" ColumnName="NumberDisplay" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="ProvidedIncentive" ColumnName="ProvidedIncentive" />
@@ -476,6 +475,8 @@
                 <ScalarProperty Name="NumberGroupsWithWord" ColumnName="NumberGroupsWithWord" />
                 <ScalarProperty Name="RelativeDistributionWord" ColumnName="RelativeDistributionWord" />
                 <ScalarProperty Name="NumberGroupsHallmark" ColumnName="NumberGroupsHallmark" />
+                <ScalarProperty Name="NumberDisplay" ColumnName="NumberDisplay" />
+                <ScalarProperty Name="AllNumberDisplay" ColumnName="AllNumberDisplay" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
