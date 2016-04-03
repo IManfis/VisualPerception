@@ -108,7 +108,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form10";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Исследование изюирательности восприятия";
+            this.Text = "Исследование избирательности восприятия";
             this.ResumeLayout(false);
             this.PerformLayout();
 

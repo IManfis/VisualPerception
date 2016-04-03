@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using VisualPerception.Model;
 
-namespace VisualPerception
+namespace VisualPerception.Student
 {
     public partial class Form3 : Form
     {

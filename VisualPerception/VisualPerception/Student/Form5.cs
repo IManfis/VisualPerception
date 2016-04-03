@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace VisualPerception
+namespace VisualPerception.Student
 {
     public partial class Form5 : Form
     {

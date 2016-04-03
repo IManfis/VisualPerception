@@ -5,7 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using VisualPerception.Model;
 
-namespace VisualPerception
+namespace VisualPerception.Student
 {
     public partial class Form6 : Form
     {

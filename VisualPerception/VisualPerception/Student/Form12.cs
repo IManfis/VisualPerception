@@ -1,33 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using VisualPerception.Model;
-using VisualPerception.Student;
 
-namespace VisualPerception
+namespace VisualPerception.Student
 {
-    public partial class Form9 : Form
+    public partial class Form12 : Form
     {
         public List<string> Lst = new List<string>();
         public int Number = 1;
-        public Form9()
+        public Form12()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, System.EventArgs e)
         {
-            WorkWithView();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var nForm = new Form8();
+            var nForm = new Form11();
             nForm.FormClosed += (o, ep) => this.Close();
             nForm.Show();
             this.Hide();
+        }
+
+        private void button2_Click(object sender, System.EventArgs e)
+        {
+            WorkWithView();
         }
 
         private void WorkWithView()
@@ -73,7 +73,7 @@ namespace VisualPerception
                 case 8: ClearTextbox8(); break;
                 case 12: ClearTextbox12(); break;
                 case 16: ClearTextbox16(); break;
-            } 
+            }
         }
 
         private void ClearTextbox8()
@@ -131,7 +131,7 @@ namespace VisualPerception
                 case 8: UpdateTextbox8(); break;
                 case 12: UpdateTextbox12(); break;
                 case 16: UpdateTextbox16(); break;
-            } 
+            }
         }
 
         private void UpdateTextbox8()
@@ -204,9 +204,9 @@ namespace VisualPerception
 
             switch (word)
             {
-                case 8: panel3.BringToFront(); WriteToTextbox8(Lst); break;
-                case 12: panel2.BringToFront(); WriteToTextbox12(Lst); break;
-                case 16: panel1.BringToFront(); WriteToTextbox16(Lst); break;
+                case 8: panel3.Visible = true; panel3.Location = new Point(12,95); panel3.BringToFront(); WriteToTextbox8(Lst); break;
+                case 12: panel2.Visible = true; panel2.Location = new Point(12, 95); panel2.BringToFront(); WriteToTextbox12(Lst); break;
+                case 16: panel1.Visible = true; panel2.Visible = false; panel1.Location = new Point(12, 95); panel1.BringToFront(); WriteToTextbox16(Lst); break;
             }
         }
 
@@ -273,14 +273,6 @@ namespace VisualPerception
             button3.Visible = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            var nForm = new Form10();
-            nForm.FormClosed += (o, ep) => this.Close();
-            nForm.Show();
-            this.Hide();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             var context = new VisualPerceptionContext();
@@ -293,7 +285,7 @@ namespace VisualPerception
             }
             else
             {
-                WorkWithView();   
+                WorkWithView();
             }
         }
 
@@ -304,6 +296,7 @@ namespace VisualPerception
             var user = context.User.ToList();
             var id = user[count - 1].Id;
             var presenting = context.ExperimentSetting.First(x => x.Name == "Предъявлений").Value;
+            var word = int.Parse(context.ExperimentSetting.First(x => x.Name == "Слов").Value);
 
             var providedIncentiveString = Lst.Aggregate("", (current, s) => current + (s + ","));
 
@@ -313,13 +306,23 @@ namespace VisualPerception
                 StringSplitOptions.RemoveEmptyEntries).ToList();
 
             var numberReproducedOfIncentive = reproducedIncentive.Count(s => Lst.Contains(s));
+            var numberOfGroups = 0;
+            switch (word)
+            {
+                case 8: numberOfGroups = NumberOfGroups8(reproducedIncentive); break;
+                case 12: numberOfGroups = NumberOfGroups12(reproducedIncentive); break;
+                case 16: numberOfGroups = NumberOfGroups16(reproducedIncentive); break;
+            }
 
-            context.Experiment1Result.Add(new Experiment1Result
+
+            context.Experiment2Result.Add(new Experiment2Result
             {
                 IdUser = id,
                 ProvidedIncentive = providedIncentiveString,
                 ReproducedIncentive = reproducedIncentiveString,
                 NumberReproducedOfIncentive = numberReproducedOfIncentive,
+                NumberGroupsWithWord = numberOfGroups,
+                RelativeDistributionWord = numberReproducedOfIncentive / double.Parse(numberOfGroups + ",0"),
                 NumberDisplay = Number,
                 AllNumberDisplay = int.Parse(presenting)
             });
@@ -327,6 +330,111 @@ namespace VisualPerception
 
             Number++;
             Thread.Sleep(1000);
+        }
+
+        private int NumberOfGroups8(List<string> reproducedIncentive)
+        {
+            var numberOfGroups = 0;
+
+            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t);
+
+            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t);
+
+            var group3 = reproducedIncentive.Count(t => Lst[4] == t || Lst[5] == t);
+
+            var group4 = reproducedIncentive.Count(t => Lst[6] == t || Lst[7] == t);
+
+            if (group1 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group2 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group3 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group4 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            return numberOfGroups;
+        }
+
+        private int NumberOfGroups12(List<string> reproducedIncentive)
+        {
+            var numberOfGroups = 0;
+
+            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t || Lst[4] == t);
+
+            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t || Lst[5] == t);
+
+            var group3 = reproducedIncentive.Count(t => Lst[8] == t || Lst[9] == t || Lst[6] == t);
+
+            var group4 = reproducedIncentive.Count(t => Lst[10] == t || Lst[11] == t || Lst[7] == t);
+
+            if (group1 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group2 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group3 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group4 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            return numberOfGroups;
+        }
+
+        private int NumberOfGroups16(List<string> reproducedIncentive)
+        {
+            var numberOfGroups = 0;
+
+            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t || Lst[4] == t || Lst[5] == t);
+
+            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t || Lst[6] == t || Lst[7] == t);
+
+            var group3 = reproducedIncentive.Count(t => Lst[8] == t || Lst[9] == t || Lst[12] == t || Lst[13] == t);
+
+            var group4 = reproducedIncentive.Count(t => Lst[10] == t || Lst[11] == t || Lst[14] == t || Lst[15] == t);
+
+            if (group1 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group2 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group3 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group4 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            return numberOfGroups;
         }
     }
 }

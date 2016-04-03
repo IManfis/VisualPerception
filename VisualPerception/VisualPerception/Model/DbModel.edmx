@@ -27,7 +27,7 @@
           <Property Name="ReproducedIncentive" Type="varchar(max)" Nullable="false" />
           <Property Name="NumberReproducedOfIncentive" Type="int" Nullable="false" />
           <Property Name="NumberGroupsWithWord" Type="int" Nullable="false" />
-          <Property Name="RelativeDistributionWord" Type="int" Nullable="false" />
+          <Property Name="RelativeDistributionWord" Type="float" Nullable="false" />
           <Property Name="NumberDisplay" Type="int" Nullable="false" />
           <Property Name="AllNumberDisplay" Type="int" Nullable="false" />
         </EntityType>

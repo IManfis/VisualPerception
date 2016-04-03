@@ -1,4 +1,4 @@
-﻿namespace VisualPerception
+﻿namespace VisualPerception.Student
 {
     partial class Form6
     {
