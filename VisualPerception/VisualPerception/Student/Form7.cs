@@ -11,6 +11,30 @@ namespace VisualPerception.Student
         public Form7()
         {
             InitializeComponent();
+            var context = new VisualPerceptionContext();
+            var count = context.User.Count();
+            var user = context.User.ToList();
+            var id = user[count - 1].Id;
+            var experiment1Result = context.Experiment1Result.Where(x => x.IdUser == id);
+            var experiment2Result = context.Experiment2Result.Where(x => x.IdUser == id);
+            var experiment3Result = context.Experiment3Result.Where(x => x.IdUser == id);
+            var experiment4Result = context.Experiment4Result.Where(x => x.IdUser == id);
+            var experiment5Result = context.Experiment5Result.Where(x => x.IdUser == id);
+            if (experiment1Result.Any() &&
+                experiment2Result.Any() &&
+                experiment3Result.Any() &&
+                experiment4Result.Any() &&
+                experiment5Result.Any())
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+                label1.Visible = false;
+                comboBox1.Visible = false;
+
+                label3.Visible = true;
+                button3.Visible = true;
+                button4.Visible = true;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -158,6 +182,19 @@ namespace VisualPerception.Student
                         label2.Visible = true;
                     } break;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var nForm = new Form23();
+            nForm.FormClosed += (o, ep) => this.Close();
+            nForm.Show();
+            this.Hide();
         }
     }
 }
