@@ -206,7 +206,7 @@ namespace VisualPerception.Student
             {
                 case 8: panel3.Visible = true; panel3.Location = new Point(12,95); panel3.BringToFront(); WriteToTextbox8(Lst); break;
                 case 12: panel2.Visible = true; panel2.Location = new Point(12, 95); panel2.BringToFront(); WriteToTextbox12(Lst); break;
-                case 16: panel1.Visible = true; panel2.Visible = false; panel1.Location = new Point(12, 95); panel1.BringToFront(); WriteToTextbox16(Lst); break;
+                case 16: panel1.Visible = true; panel1.Location = new Point(12, 95); panel1.BringToFront(); WriteToTextbox16(Lst); break;
             }
         }
 

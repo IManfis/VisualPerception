@@ -1,33 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using VisualPerception.Model;
-using VisualPerception.Student;
 
-namespace VisualPerception
+namespace VisualPerception.Student
 {
-    public partial class Form9 : Form
+    public partial class Form15 : Form
     {
         public List<string> Lst = new List<string>();
+        public List<string> Lst1 = new List<string>();
+        public List<int> Ints = new List<int>(); 
         public int Number = 1;
-        public Form9()
+        public Form15()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var nForm = new Form14();
+            nForm.FormClosed += (o, ep) => this.Close();
+            nForm.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             WorkWithView();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var nForm = new Form8();
-            nForm.FormClosed += (o, ep) => this.Close();
-            nForm.Show();
-            this.Hide();
         }
 
         private void WorkWithView()
@@ -73,7 +75,7 @@ namespace VisualPerception
                 case 8: ClearTextbox8(); break;
                 case 12: ClearTextbox12(); break;
                 case 16: ClearTextbox16(); break;
-            } 
+            }
         }
 
         private void ClearTextbox8()
@@ -131,7 +133,7 @@ namespace VisualPerception
                 case 8: UpdateTextbox8(); break;
                 case 12: UpdateTextbox12(); break;
                 case 16: UpdateTextbox16(); break;
-            } 
+            }
         }
 
         private void UpdateTextbox8()
@@ -202,16 +204,111 @@ namespace VisualPerception
                 }
             }
 
+            Ints.Clear();
+            if (word == 8)
+            {
+                Ints.Add(30);
+                Ints.Add(31);
+                Ints.Add(32);
+                Ints.Add(33);
+                Ints.Add(34);
+                Ints.Add(35);
+                Ints.Add(36);
+                Ints.Add(37);
+            }
+            Ints.Clear();
+            if (word == 12)
+            {
+                Ints.Add(18);
+                Ints.Add(19);
+                Ints.Add(20);
+                Ints.Add(21);
+                Ints.Add(22);
+                Ints.Add(23);
+                Ints.Add(24);
+                Ints.Add(25);
+                Ints.Add(26);
+                Ints.Add(27);
+                Ints.Add(28);
+                Ints.Add(29);
+            }
+            Ints.Clear();
+            if (word == 16)
+            {
+                Ints.Add(1);
+                Ints.Add(2);
+                Ints.Add(3);
+                Ints.Add(4);
+                Ints.Add(5);
+                Ints.Add(6);
+                Ints.Add(7);
+                Ints.Add(8);
+                Ints.Add(9);
+                Ints.Add(10);
+                Ints.Add(11);
+                Ints.Add(12);
+                Ints.Add(13);
+                Ints.Add(14);
+                Ints.Add(15);
+                Ints.Add(16);
+            }
+
+            for (var i = 0; i < word / 2; i++)
+            {
+                while (true)
+                {
+                    k = random.Next(Ints.Count - 1);
+                    Ints.Remove(Ints[k]);
+                    break;
+                }
+            }
+
+            foreach (var i in Ints)
+            {
+                Lst1.Add(Lst[i - 1]);
+            }
+
             switch (word)
             {
-                case 8: panel3.Visible = true; panel3.BringToFront(); WriteToTextbox8(Lst); break;
-                case 12: panel2.Visible = true; panel2.BringToFront(); WriteToTextbox12(Lst); break;
-                case 16: panel1.Visible = true; panel1.BringToFront(); WriteToTextbox16(Lst); break;
+                case 8: panel3.Visible = true; panel3.BringToFront(); WriteToTextbox8(Lst, Ints); break;
+                case 12: panel2.Visible = true; panel2.BringToFront(); WriteToTextbox12(Lst, Ints); break;
+                case 16: panel1.Visible = true; panel1.BringToFront(); WriteToTextbox16(Lst, Ints); break;
             }
         }
 
-        private void WriteToTextbox8(List<string> list)
+        private void WriteToTextbox8(List<string> list, List<int> ints)
         {
+            if (ints.Contains(30))
+            {
+                textBox30.Font = new Font("Microsoft Sans Serif", 12);
+            } if (ints.Contains(31))
+            {
+                textBox31.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(32))
+            {
+                textBox32.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(33))
+            {
+                textBox33.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(34))
+            {
+                textBox34.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(35))
+            {
+                textBox35.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(36))
+            {
+                textBox36.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(37))
+            {
+                textBox37.Font = new Font("Microsoft Sans Serif", 12);
+            }
             textBox30.Text = list[0];
             textBox31.Text = list[1];
             textBox32.Text = list[2];
@@ -222,8 +319,55 @@ namespace VisualPerception
             textBox37.Text = list[7];
         }
 
-        private void WriteToTextbox12(List<string> list)
+        private void WriteToTextbox12(List<string> list, List<int> ints)
         {
+            if (ints.Contains(18))
+            {
+                textBox18.Font = new Font("Microsoft Sans Serif", 12);
+            } if (ints.Contains(19))
+            {
+                textBox19.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(20))
+            {
+                textBox20.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(21))
+            {
+                textBox21.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(22))
+            {
+                textBox22.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(23))
+            {
+                textBox23.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(24))
+            {
+                textBox24.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(25))
+            {
+                textBox25.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(26))
+            {
+                textBox26.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(27))
+            {
+                textBox27.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(28))
+            {
+                textBox28.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(29))
+            {
+                textBox29.Font = new Font("Microsoft Sans Serif", 12);
+            }
             textBox18.Text = list[0];
             textBox19.Text = list[1];
             textBox20.Text = list[2];
@@ -238,8 +382,71 @@ namespace VisualPerception
             textBox29.Text = list[11];
         }
 
-        private void WriteToTextbox16(List<string> list)
+        private void WriteToTextbox16(List<string> list, List<int> ints)
         {
+            if (ints.Contains(1))
+            {
+                textBox1.Font = new Font("Microsoft Sans Serif", 12);
+            } if (ints.Contains(2))
+            {
+                textBox2.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(3))
+            {
+                textBox3.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(4))
+            {
+                textBox4.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(5))
+            {
+                textBox5.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(6))
+            {
+                textBox6.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(7))
+            {
+                textBox7.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(8))
+            {
+                textBox8.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(9))
+            {
+                textBox9.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(10))
+            {
+                textBox10.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(11))
+            {
+                textBox11.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(12))
+            {
+                textBox12.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(13))
+            {
+                textBox13.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(14))
+            {
+                textBox14.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(15))
+            {
+                textBox15.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            if (ints.Contains(16))
+            {
+                textBox16.Font = new Font("Microsoft Sans Serif", 12);
+            }
             textBox1.Text = list[0];
             textBox2.Text = list[1];
             textBox3.Text = list[2];
@@ -273,14 +480,6 @@ namespace VisualPerception
             button3.Visible = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            var nForm = new Form10();
-            nForm.FormClosed += (o, ep) => this.Close();
-            nForm.Show();
-            this.Hide();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             var context = new VisualPerceptionContext();
@@ -293,7 +492,7 @@ namespace VisualPerception
             }
             else
             {
-                WorkWithView();   
+                WorkWithView();
             }
         }
 
@@ -313,13 +512,16 @@ namespace VisualPerception
                 StringSplitOptions.RemoveEmptyEntries).ToList();
 
             var numberReproducedOfIncentive = reproducedIncentive.Count(s => Lst.Contains(s));
+            var numberHallmark = reproducedIncentive.Count(s => Lst1.Contains(s));
+            var possessesHallmark = (numberHallmark / double.Parse(numberReproducedOfIncentive + ",0")) * 100;
 
-            context.Experiment1Result.Add(new Experiment1Result
+            context.Experiment3Result.Add(new Experiment3Result
             {
                 IdUser = id,
                 ProvidedIncentive = providedIncentiveString,
                 ReproducedIncentive = reproducedIncentiveString,
                 NumberReproducedOfIncentive = numberReproducedOfIncentive,
+                PossessesHallmark = possessesHallmark,
                 NumberDisplay = Number,
                 AllNumberDisplay = int.Parse(presenting)
             });
@@ -327,6 +529,14 @@ namespace VisualPerception
 
             Number++;
             Thread.Sleep(1000);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var nForm = new Form16();
+            nForm.FormClosed += (o, ep) => this.Close();
+            nForm.Show();
+            this.Hide();
         }
     }
 }

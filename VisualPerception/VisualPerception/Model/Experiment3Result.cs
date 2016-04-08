@@ -19,7 +19,7 @@ namespace VisualPerception.Model
         public string ProvidedIncentive { get; set; }
         public string ReproducedIncentive { get; set; }
         public int NumberReproducedOfIncentive { get; set; }
-        public int PossessesHallmark { get; set; }
+        public double PossessesHallmark { get; set; }
         public int NumberDisplay { get; set; }
         public int AllNumberDisplay { get; set; }
     

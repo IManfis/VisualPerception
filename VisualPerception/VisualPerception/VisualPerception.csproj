@@ -130,6 +130,24 @@
     <Compile Include="Student\Form13.Designer.cs">
       <DependentUpon>Form13.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\Form14.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Form14.Designer.cs">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Form15.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Form15.Designer.cs">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Form16.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Form16.Designer.cs">
+      <DependentUpon>Form16.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\Form3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +209,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Form13.resx">
       <DependentUpon>Form13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Form14.resx">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Form15.resx">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Form16.resx">
+      <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>

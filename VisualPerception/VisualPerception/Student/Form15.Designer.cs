@@ -1,6 +1,6 @@
-﻿namespace VisualPerception
+﻿namespace VisualPerception.Student
 {
-    partial class Form9
+    partial class Form15
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.textBox28 = new System.Windows.Forms.TextBox();
@@ -47,12 +51,13 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox16 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -65,119 +70,144 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label4
+            // textBox23
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(204, 360);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(274, 13);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "Введите воспринятые слова, разделяя их запятыми";
-            this.label4.Visible = false;
+            this.textBox23.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox23.Location = new System.Drawing.Point(203, 107);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.ReadOnly = true;
+            this.textBox23.Size = new System.Drawing.Size(100, 20);
+            this.textBox23.TabIndex = 25;
             // 
-            // textBox17
+            // label6
             // 
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox17.Location = new System.Drawing.Point(13, 376);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ShortcutsEnabled = false;
-            this.textBox17.Size = new System.Drawing.Size(709, 20);
-            this.textBox17.TabIndex = 48;
-            this.textBox17.Visible = false;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(405, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(25, 17);
+            this.label6.TabIndex = 66;
+            this.label6.Text = "из";
+            this.label6.Visible = false;
             // 
-            // button4
+            // panel3
             // 
-            this.button4.Location = new System.Drawing.Point(576, 425);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(146, 25);
-            this.button4.TabIndex = 47;
-            this.button4.Text = "Просмотреть результаты";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.panel3.Controls.Add(this.textBox37);
+            this.panel3.Controls.Add(this.textBox36);
+            this.panel3.Controls.Add(this.textBox35);
+            this.panel3.Controls.Add(this.textBox34);
+            this.panel3.Controls.Add(this.textBox33);
+            this.panel3.Controls.Add(this.textBox32);
+            this.panel3.Controls.Add(this.textBox31);
+            this.panel3.Controls.Add(this.textBox30);
+            this.panel3.Location = new System.Drawing.Point(10, 96);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(709, 236);
+            this.panel3.TabIndex = 64;
+            this.panel3.Visible = false;
             // 
-            // button3
+            // textBox37
             // 
-            this.button3.Location = new System.Drawing.Point(307, 402);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 46;
-            this.button3.Text = "Ввод";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.textBox37.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox37.Location = new System.Drawing.Point(563, 163);
+            this.textBox37.Name = "textBox37";
+            this.textBox37.ReadOnly = true;
+            this.textBox37.Size = new System.Drawing.Size(100, 20);
+            this.textBox37.TabIndex = 27;
             // 
-            // button2
+            // textBox36
             // 
-            this.button2.Location = new System.Drawing.Point(106, 429);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 23);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Начать эксперимент";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.textBox36.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox36.Location = new System.Drawing.Point(382, 159);
+            this.textBox36.Name = "textBox36";
+            this.textBox36.ReadOnly = true;
+            this.textBox36.Size = new System.Drawing.Size(100, 20);
+            this.textBox36.TabIndex = 26;
             // 
-            // button1
+            // textBox35
             // 
-            this.button1.Location = new System.Drawing.Point(12, 429);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.textBox35.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox35.Location = new System.Drawing.Point(194, 163);
+            this.textBox35.Name = "textBox35";
+            this.textBox35.ReadOnly = true;
+            this.textBox35.Size = new System.Drawing.Size(100, 20);
+            this.textBox35.TabIndex = 25;
             // 
-            // label1
+            // textBox34
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(174, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 17);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Опыт №1. Предъявление ";
+            this.textBox34.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox34.Location = new System.Drawing.Point(23, 163);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.ReadOnly = true;
+            this.textBox34.Size = new System.Drawing.Size(100, 20);
+            this.textBox34.TabIndex = 24;
             // 
-            // panel1
+            // textBox33
             // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.textBox13);
-            this.panel1.Controls.Add(this.textBox14);
-            this.panel1.Controls.Add(this.textBox15);
-            this.panel1.Controls.Add(this.textBox16);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox10);
-            this.panel1.Controls.Add(this.textBox11);
-            this.panel1.Controls.Add(this.textBox12);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(13, 95);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(709, 236);
-            this.panel1.TabIndex = 50;
-            this.panel1.Visible = false;
+            this.textBox33.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox33.Location = new System.Drawing.Point(563, 43);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.ReadOnly = true;
+            this.textBox33.Size = new System.Drawing.Size(100, 20);
+            this.textBox33.TabIndex = 23;
+            // 
+            // textBox32
+            // 
+            this.textBox32.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox32.Location = new System.Drawing.Point(382, 43);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.ReadOnly = true;
+            this.textBox32.Size = new System.Drawing.Size(100, 20);
+            this.textBox32.TabIndex = 22;
+            // 
+            // textBox31
+            // 
+            this.textBox31.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox31.Location = new System.Drawing.Point(194, 43);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.ReadOnly = true;
+            this.textBox31.Size = new System.Drawing.Size(100, 20);
+            this.textBox31.TabIndex = 21;
+            // 
+            // textBox30
+            // 
+            this.textBox30.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox30.Location = new System.Drawing.Point(23, 43);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.ReadOnly = true;
+            this.textBox30.Size = new System.Drawing.Size(100, 20);
+            this.textBox30.TabIndex = 20;
+            // 
+            // textBox24
+            // 
+            this.textBox24.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox24.Location = new System.Drawing.Point(383, 107);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.ReadOnly = true;
+            this.textBox24.Size = new System.Drawing.Size(100, 20);
+            this.textBox24.TabIndex = 19;
             // 
             // panel2
             // 
@@ -193,7 +223,7 @@
             this.panel2.Controls.Add(this.textBox22);
             this.panel2.Controls.Add(this.textBox23);
             this.panel2.Controls.Add(this.textBox24);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(12, 96);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(709, 236);
             this.panel2.TabIndex = 51;
@@ -263,6 +293,7 @@
             // 
             this.textBox19.BackColor = System.Drawing.SystemColors.Control;
             this.textBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox19.Location = new System.Drawing.Point(203, 17);
             this.textBox19.Name = "textBox19";
             this.textBox19.ReadOnly = true;
@@ -299,25 +330,15 @@
             this.textBox22.Size = new System.Drawing.Size(100, 20);
             this.textBox22.TabIndex = 26;
             // 
-            // textBox23
+            // label5
             // 
-            this.textBox23.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox23.Location = new System.Drawing.Point(203, 107);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.ReadOnly = true;
-            this.textBox23.Size = new System.Drawing.Size(100, 20);
-            this.textBox23.TabIndex = 25;
-            // 
-            // textBox24
-            // 
-            this.textBox24.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox24.Location = new System.Drawing.Point(383, 107);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.ReadOnly = true;
-            this.textBox24.Size = new System.Drawing.Size(100, 20);
-            this.textBox24.TabIndex = 19;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(382, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 17);
+            this.label5.TabIndex = 65;
+            this.label5.Visible = false;
             // 
             // textBox13
             // 
@@ -349,6 +370,16 @@
             this.textBox15.Size = new System.Drawing.Size(100, 20);
             this.textBox15.TabIndex = 32;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(436, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 17);
+            this.label7.TabIndex = 67;
+            this.label7.Visible = false;
+            // 
             // textBox16
             // 
             this.textBox16.BackColor = System.Drawing.SystemColors.Control;
@@ -358,6 +389,30 @@
             this.textBox16.ReadOnly = true;
             this.textBox16.Size = new System.Drawing.Size(100, 20);
             this.textBox16.TabIndex = 31;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox13);
+            this.panel1.Controls.Add(this.textBox14);
+            this.panel1.Controls.Add(this.textBox15);
+            this.panel1.Controls.Add(this.textBox16);
+            this.panel1.Controls.Add(this.textBox9);
+            this.panel1.Controls.Add(this.textBox10);
+            this.panel1.Controls.Add(this.textBox11);
+            this.panel1.Controls.Add(this.textBox12);
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Location = new System.Drawing.Point(13, 96);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(709, 236);
+            this.panel1.TabIndex = 63;
+            this.panel1.Visible = false;
             // 
             // textBox9
             // 
@@ -479,160 +534,106 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 19;
             // 
-            // panel3
+            // label1
             // 
-            this.panel3.Controls.Add(this.textBox37);
-            this.panel3.Controls.Add(this.textBox36);
-            this.panel3.Controls.Add(this.textBox35);
-            this.panel3.Controls.Add(this.textBox34);
-            this.panel3.Controls.Add(this.textBox33);
-            this.panel3.Controls.Add(this.textBox32);
-            this.panel3.Controls.Add(this.textBox31);
-            this.panel3.Controls.Add(this.textBox30);
-            this.panel3.Location = new System.Drawing.Point(12, 95);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(709, 236);
-            this.panel3.TabIndex = 52;
-            this.panel3.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(174, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 17);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "Опыт №3. Предъявление ";
             // 
-            // textBox37
+            // button3
             // 
-            this.textBox37.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox37.Location = new System.Drawing.Point(564, 163);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.ReadOnly = true;
-            this.textBox37.Size = new System.Drawing.Size(100, 20);
-            this.textBox37.TabIndex = 27;
+            this.button3.Location = new System.Drawing.Point(307, 403);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 59;
+            this.button3.Text = "Ввод";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox36
+            // button2
             // 
-            this.textBox36.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox36.Location = new System.Drawing.Point(383, 159);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.ReadOnly = true;
-            this.textBox36.Size = new System.Drawing.Size(100, 20);
-            this.textBox36.TabIndex = 26;
+            this.button2.Location = new System.Drawing.Point(106, 430);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(129, 23);
+            this.button2.TabIndex = 58;
+            this.button2.Text = "Начать эксперимент";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox35
+            // label4
             // 
-            this.textBox35.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox35.Location = new System.Drawing.Point(195, 163);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.ReadOnly = true;
-            this.textBox35.Size = new System.Drawing.Size(100, 20);
-            this.textBox35.TabIndex = 25;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(204, 361);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(274, 13);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "Введите воспринятые слова, разделяя их запятыми";
+            this.label4.Visible = false;
             // 
-            // textBox34
+            // textBox17
             // 
-            this.textBox34.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox34.Location = new System.Drawing.Point(24, 163);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.ReadOnly = true;
-            this.textBox34.Size = new System.Drawing.Size(100, 20);
-            this.textBox34.TabIndex = 24;
+            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox17.Location = new System.Drawing.Point(13, 377);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.ShortcutsEnabled = false;
+            this.textBox17.Size = new System.Drawing.Size(709, 20);
+            this.textBox17.TabIndex = 61;
+            this.textBox17.Visible = false;
             // 
-            // textBox33
+            // button4
             // 
-            this.textBox33.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox33.Location = new System.Drawing.Point(564, 43);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.ReadOnly = true;
-            this.textBox33.Size = new System.Drawing.Size(100, 20);
-            this.textBox33.TabIndex = 23;
+            this.button4.Location = new System.Drawing.Point(576, 426);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(146, 25);
+            this.button4.TabIndex = 60;
+            this.button4.Text = "Просмотреть результаты";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBox32
+            // button1
             // 
-            this.textBox32.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox32.Location = new System.Drawing.Point(383, 43);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(100, 20);
-            this.textBox32.TabIndex = 22;
+            this.button1.Location = new System.Drawing.Point(12, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 57;
+            this.button1.Text = "Назад";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox31
-            // 
-            this.textBox31.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox31.Location = new System.Drawing.Point(195, 43);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.ReadOnly = true;
-            this.textBox31.Size = new System.Drawing.Size(100, 20);
-            this.textBox31.TabIndex = 21;
-            // 
-            // textBox30
-            // 
-            this.textBox30.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox30.Location = new System.Drawing.Point(24, 43);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.ReadOnly = true;
-            this.textBox30.Size = new System.Drawing.Size(100, 20);
-            this.textBox30.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(382, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 17);
-            this.label5.TabIndex = 53;
-            this.label5.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(405, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 17);
-            this.label6.TabIndex = 54;
-            this.label6.Text = "из";
-            this.label6.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(436, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 17);
-            this.label7.TabIndex = 55;
-            this.label7.Visible = false;
-            // 
-            // Form9
+            // Form15
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 462);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox17);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form9";
+            this.Name = "Form15";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Исследование избирательности восприятия";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -640,26 +641,36 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox textBox37;
+        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
@@ -672,22 +683,12 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox36;
-        private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox34;
-        private System.Windows.Forms.TextBox textBox33;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
     }
 }

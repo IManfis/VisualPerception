@@ -40,7 +40,7 @@
           <Property Name="ProvidedIncentive" Type="varchar(max)" Nullable="false" />
           <Property Name="ReproducedIncentive" Type="varchar(max)" Nullable="false" />
           <Property Name="NumberReproducedOfIncentive" Type="int" Nullable="false" />
-          <Property Name="PossessesHallmark" Type="int" Nullable="false" />
+          <Property Name="PossessesHallmark" Type="float" Nullable="false" />
           <Property Name="NumberDisplay" Type="int" Nullable="false" />
           <Property Name="AllNumberDisplay" Type="int" Nullable="false" />
         </EntityType>
@@ -238,7 +238,7 @@
           <Property Name="ProvidedIncentive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ReproducedIncentive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NumberReproducedOfIncentive" Type="Int32" Nullable="false" />
-          <Property Name="PossessesHallmark" Type="Int32" Nullable="false" />
+          <Property Name="PossessesHallmark" Type="Double" Nullable="false" />
           <Property Name="NumberDisplay" Type="Int32" Nullable="false" />
           <Property Name="AllNumberDisplay" Type="Int32" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_Experiment3Result_User" FromRole="Experiment3Result" ToRole="User" />
