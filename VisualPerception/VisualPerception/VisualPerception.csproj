@@ -148,6 +148,42 @@
     <Compile Include="Student\Form16.Designer.cs">
       <DependentUpon>Form16.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\Form17.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Form17.Designer.cs">
+      <DependentUpon>Form17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Form18.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Form18.Designer.cs">
+      <DependentUpon>Form18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Form19.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Form19.Designer.cs">
+      <DependentUpon>Form19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Form20.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Form20.Designer.cs">
+      <DependentUpon>Form20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Form21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Form21.Designer.cs">
+      <DependentUpon>Form21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Form22.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Form22.Designer.cs">
+      <DependentUpon>Form22.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\Form3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +254,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Form16.resx">
       <DependentUpon>Form16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Form17.resx">
+      <DependentUpon>Form17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Form18.resx">
+      <DependentUpon>Form18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Form19.resx">
+      <DependentUpon>Form19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Form20.resx">
+      <DependentUpon>Form20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Form21.resx">
+      <DependentUpon>Form21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Form22.resx">
+      <DependentUpon>Form22.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>

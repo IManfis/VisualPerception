@@ -8,20 +8,20 @@ using VisualPerception.Model;
 
 namespace VisualPerception.Student
 {
-    public partial class Form15 : Form
+    public partial class Form21 : Form
     {
         public List<string> Lst = new List<string>();
         public List<string> Lst1 = new List<string>();
         public List<int> Ints = new List<int>(); 
         public int Number = 1;
-        public Form15()
+        public Form21()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var nForm = new Form14();
+            var nForm = new Form20();
             nForm.FormClosed += (o, ep) => this.Close();
             nForm.Show();
             this.Hide();
@@ -662,6 +662,7 @@ namespace VisualPerception.Student
             var user = context.User.ToList();
             var id = user[count - 1].Id;
             var presenting = context.ExperimentSetting.First(x => x.Name == "Предъявлений").Value;
+            var word = int.Parse(context.ExperimentSetting.First(x => x.Name == "Слов").Value);
 
             var providedIncentiveString = Lst.Aggregate("", (current, s) => current + (s + ","));
 
@@ -671,16 +672,30 @@ namespace VisualPerception.Student
                 StringSplitOptions.RemoveEmptyEntries).ToList();
 
             var numberReproducedOfIncentive = reproducedIncentive.Count(s => Lst.Contains(s));
-            var numberHallmark = reproducedIncentive.Count(s => Lst1.Contains(s));
-            var possessesHallmark = (numberHallmark / double.Parse(numberReproducedOfIncentive + ",0")) * 100;
+            var numberOfGroups = 0;
+            switch (word)
+            {
+                case 8: numberOfGroups = NumberOfGroups8(reproducedIncentive); break;
+                case 12: numberOfGroups = NumberOfGroups12(reproducedIncentive); break;
+                case 16: numberOfGroups = NumberOfGroups16(reproducedIncentive); break;
+            }
+            var numberOfGroupsHallmark = 0;
+            switch (word)
+            {
+                case 8: numberOfGroupsHallmark = NumberOfGroupsHallmark8(reproducedIncentive); break;
+                case 12: numberOfGroupsHallmark = NumberOfGroupsHallmark12(reproducedIncentive); break;
+                case 16: numberOfGroupsHallmark = NumberOfGroupsHallmark16(reproducedIncentive); break;
+            }
 
-            context.Experiment3Result.Add(new Experiment3Result
+            context.Experiment5Result.Add(new Experiment5Result
             {
                 IdUser = id,
                 ProvidedIncentive = providedIncentiveString,
                 ReproducedIncentive = reproducedIncentiveString,
                 NumberReproducedOfIncentive = numberReproducedOfIncentive,
-                PossessesHallmark = possessesHallmark,
+                NumberGroupsWithWord = numberOfGroups,
+                RelativeDistributionWord = numberReproducedOfIncentive / double.Parse(numberOfGroups + ",0"),
+                NumberGroupsHallmark = numberOfGroupsHallmark,
                 NumberDisplay = Number,
                 AllNumberDisplay = int.Parse(presenting)
             });
@@ -690,9 +705,311 @@ namespace VisualPerception.Student
             Thread.Sleep(1000);
         }
 
+        private int NumberOfGroups8(List<string> reproducedIncentive)
+        {
+            var numberOfGroups = 0;
+
+            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t);
+
+            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t);
+
+            var group3 = reproducedIncentive.Count(t => Lst[4] == t || Lst[5] == t);
+
+            var group4 = reproducedIncentive.Count(t => Lst[6] == t || Lst[7] == t);
+
+            if (group1 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group2 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group3 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group4 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            return numberOfGroups;
+        }
+
+        private int NumberOfGroups12(List<string> reproducedIncentive)
+        {
+            var numberOfGroups = 0;
+
+            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t || Lst[4] == t);
+
+            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t || Lst[5] == t);
+
+            var group3 = reproducedIncentive.Count(t => Lst[8] == t || Lst[9] == t || Lst[6] == t);
+
+            var group4 = reproducedIncentive.Count(t => Lst[10] == t || Lst[11] == t || Lst[7] == t);
+
+            if (group1 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group2 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group3 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group4 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            return numberOfGroups;
+        }
+
+        private int NumberOfGroups16(List<string> reproducedIncentive)
+        {
+            var numberOfGroups = 0;
+
+            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t || Lst[4] == t || Lst[5] == t);
+
+            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t || Lst[6] == t || Lst[7] == t);
+
+            var group3 = reproducedIncentive.Count(t => Lst[8] == t || Lst[9] == t || Lst[12] == t || Lst[13] == t);
+
+            var group4 = reproducedIncentive.Count(t => Lst[10] == t || Lst[11] == t || Lst[14] == t || Lst[15] == t);
+
+            if (group1 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group2 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group3 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group4 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            return numberOfGroups;
+        }
+
+        private int NumberOfGroupsHallmark8(List<String> reproducedIncentive)
+        {
+            var numberOfGroups = 0;
+
+            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t);
+
+            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t);
+
+            var group3 = reproducedIncentive.Count(t => Lst[4] == t || Lst[5] == t);
+
+            var group4 = reproducedIncentive.Count(t => Lst[6] == t || Lst[7] == t);
+
+            var grouphallmark1 = 0;
+            var grouphallmark2 = 0;
+            var grouphallmark3 = 0;
+            var grouphallmark4 = 0;
+
+            foreach (var item in reproducedIncentive)
+            {
+                if (Lst.FindIndex(x => x.Contains(item)) == 0 || Lst.FindIndex(x => x.Contains(item)) == 1)
+                {
+                    grouphallmark1++;
+                }
+
+                if (Lst.FindIndex(x => x.Contains(item)) == 2 || Lst.FindIndex(x => x.Contains(item)) == 3)
+                {
+                    grouphallmark2++;
+                }
+
+                if (Lst.FindIndex(x => x.Contains(item)) == 4 || Lst.FindIndex(x => x.Contains(item)) == 5)
+                {
+                    grouphallmark3++;
+                }
+
+                if (Lst.FindIndex(x => x.Contains(item)) == 6 || Lst.FindIndex(x => x.Contains(item)) == 7)
+                {
+                    grouphallmark4++;
+                }
+            }
+
+            if (group1 > 0 && grouphallmark1 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group2 > 0 && grouphallmark2 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group3 > 0 && grouphallmark3 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group4 > 0 && grouphallmark4 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            return numberOfGroups;
+        }
+
+        private int NumberOfGroupsHallmark12(List<String> reproducedIncentive)
+        {
+            var numberOfGroups = 0;
+
+            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t || Lst[4] == t);
+
+            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t || Lst[5] == t);
+
+            var group3 = reproducedIncentive.Count(t => Lst[8] == t || Lst[9] == t || Lst[6] == t);
+
+            var group4 = reproducedIncentive.Count(t => Lst[10] == t || Lst[11] == t || Lst[7] == t);
+
+            var grouphallmark1 = 0;
+            var grouphallmark2 = 0;
+            var grouphallmark3 = 0;
+            var grouphallmark4 = 0;
+
+            foreach (var item in reproducedIncentive)
+            {
+                if (Lst.FindIndex(x => x.Contains(item)) == 0 || Lst.FindIndex(x => x.Contains(item)) == 1 ||
+                    Lst.FindIndex(x => x.Contains(item)) == 4)
+                {
+                    grouphallmark1++;
+                }
+
+                if (Lst.FindIndex(x => x.Contains(item)) == 2 || Lst.FindIndex(x => x.Contains(item)) == 3 ||
+                    Lst.FindIndex(x => x.Contains(item)) == 5)
+                {
+                    grouphallmark2++;
+                }
+
+                if (Lst.FindIndex(x => x.Contains(item)) == 8 || Lst.FindIndex(x => x.Contains(item)) == 9 ||
+                    Lst.FindIndex(x => x.Contains(item)) == 6)
+                {
+                    grouphallmark3++;
+                }
+
+                if (Lst.FindIndex(x => x.Contains(item)) == 10 || Lst.FindIndex(x => x.Contains(item)) == 11 ||
+                    Lst.FindIndex(x => x.Contains(item)) == 7)
+                {
+                    grouphallmark4++;
+                }
+            }
+          
+            if (group1 > 0 && grouphallmark1 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group2 > 0 && grouphallmark2 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group3 > 0 && grouphallmark3 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group4 > 0 && grouphallmark4 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            return numberOfGroups;
+        }
+
+        private int NumberOfGroupsHallmark16(List<String> reproducedIncentive)
+        {
+            var numberOfGroups = 0;
+
+            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t || Lst[4] == t || Lst[5] == t);
+
+            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t || Lst[6] == t || Lst[7] == t);
+
+            var group3 = reproducedIncentive.Count(t => Lst[8] == t || Lst[9] == t || Lst[12] == t || Lst[13] == t);
+
+            var group4 = reproducedIncentive.Count(t => Lst[10] == t || Lst[11] == t || Lst[14] == t || Lst[15] == t);
+
+            var grouphallmark1 = 0;
+            var grouphallmark2 = 0;
+            var grouphallmark3 = 0;
+            var grouphallmark4 = 0;
+
+            foreach (var item in reproducedIncentive)
+            {
+                if (Lst.FindIndex(x => x.Contains(item)) == 0 || Lst.FindIndex(x => x.Contains(item)) == 1 ||
+                    Lst.FindIndex(x => x.Contains(item)) == 4 || Lst.FindIndex(x => x.Contains(item)) == 5)
+                {
+                    grouphallmark1++;
+                }
+
+                if (Lst.FindIndex(x => x.Contains(item)) == 2 || Lst.FindIndex(x => x.Contains(item)) == 3 ||
+                    Lst.FindIndex(x => x.Contains(item)) == 6 || Lst.FindIndex(x => x.Contains(item)) == 7)
+                {
+                    grouphallmark2++;
+                }
+
+                if (Lst.FindIndex(x => x.Contains(item)) == 8 || Lst.FindIndex(x => x.Contains(item)) == 9 ||
+                    Lst.FindIndex(x => x.Contains(item)) == 12 || Lst.FindIndex(x => x.Contains(item)) == 13)
+                {
+                    grouphallmark3++;
+                }
+
+                if (Lst.FindIndex(x => x.Contains(item)) == 10 || Lst.FindIndex(x => x.Contains(item)) == 11 ||
+                    Lst.FindIndex(x => x.Contains(item)) == 14 || Lst.FindIndex(x => x.Contains(item)) == 15)
+                {
+                    grouphallmark4++;
+                }
+            }
+
+            if (group1 > 0 && grouphallmark1 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group2 > 0 && grouphallmark2 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group3 > 0 && grouphallmark3 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            if (group4 > 0 && grouphallmark4 > 0)
+            {
+                numberOfGroups += 1;
+            }
+
+            return numberOfGroups;
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
-            var nForm = new Form16();
+            var nForm = new Form22();
             nForm.FormClosed += (o, ep) => this.Close();
             nForm.Show();
             this.Hide();

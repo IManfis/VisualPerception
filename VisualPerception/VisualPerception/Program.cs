@@ -14,7 +14,7 @@ namespace VisualPerception
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form16());
+            Application.Run(new Form22());
         }
     }
 }

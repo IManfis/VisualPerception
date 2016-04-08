@@ -8,20 +8,20 @@ using VisualPerception.Model;
 
 namespace VisualPerception.Student
 {
-    public partial class Form15 : Form
+    public partial class Form18 : Form
     {
         public List<string> Lst = new List<string>();
         public List<string> Lst1 = new List<string>();
-        public List<int> Ints = new List<int>(); 
+        public List<int> Ints = new List<int>();
         public int Number = 1;
-        public Form15()
+        public Form18()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var nForm = new Form14();
+            var nForm = new Form17();
             nForm.FormClosed += (o, ep) => this.Close();
             nForm.Show();
             this.Hide();
@@ -284,37 +284,7 @@ namespace VisualPerception.Student
 
         private void WriteToTextbox8(List<string> list, List<int> ints)
         {
-            if (ints.Contains(30))
-            {
-                textBox30.Font = new Font("Microsoft Sans Serif", 12);
-            } if (ints.Contains(31))
-            {
-                textBox31.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(32))
-            {
-                textBox32.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(33))
-            {
-                textBox33.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(34))
-            {
-                textBox34.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(35))
-            {
-                textBox35.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(36))
-            {
-                textBox36.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(37))
-            {
-                textBox37.Font = new Font("Microsoft Sans Serif", 12);
-            }
+            MakeTextBold8(ints);
             textBox30.Text = list[0];
             textBox31.Text = list[1];
             textBox32.Text = list[2];
@@ -327,53 +297,7 @@ namespace VisualPerception.Student
 
         private void WriteToTextbox12(List<string> list, List<int> ints)
         {
-            if (ints.Contains(18))
-            {
-                textBox18.Font = new Font("Microsoft Sans Serif", 12);
-            } if (ints.Contains(19))
-            {
-                textBox19.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(20))
-            {
-                textBox20.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(21))
-            {
-                textBox21.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(22))
-            {
-                textBox22.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(23))
-            {
-                textBox23.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(24))
-            {
-                textBox24.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(25))
-            {
-                textBox25.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(26))
-            {
-                textBox26.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(27))
-            {
-                textBox27.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(28))
-            {
-                textBox28.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(29))
-            {
-                textBox29.Font = new Font("Microsoft Sans Serif", 12);
-            }
+            MakeTextBold12(ints);
             textBox18.Text = list[0];
             textBox19.Text = list[1];
             textBox20.Text = list[2];
@@ -390,69 +314,7 @@ namespace VisualPerception.Student
 
         private void WriteToTextbox16(List<string> list, List<int> ints)
         {
-            if (ints.Contains(1))
-            {
-                textBox1.Font = new Font("Microsoft Sans Serif", 12);
-            } if (ints.Contains(2))
-            {
-                textBox2.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(3))
-            {
-                textBox3.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(4))
-            {
-                textBox4.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(5))
-            {
-                textBox5.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(6))
-            {
-                textBox6.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(7))
-            {
-                textBox7.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(8))
-            {
-                textBox8.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(9))
-            {
-                textBox9.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(10))
-            {
-                textBox10.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(11))
-            {
-                textBox11.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(12))
-            {
-                textBox12.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(13))
-            {
-                textBox13.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(14))
-            {
-                textBox14.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(15))
-            {
-                textBox15.Font = new Font("Microsoft Sans Serif", 12);
-            }
-            if (ints.Contains(16))
-            {
-                textBox16.Font = new Font("Microsoft Sans Serif", 12);
-            }
+            MakeTextBold16(ints);
             textBox1.Text = list[0];
             textBox2.Text = list[1];
             textBox3.Text = list[2];
@@ -469,6 +331,159 @@ namespace VisualPerception.Student
             textBox14.Text = list[13];
             textBox15.Text = list[14];
             textBox16.Text = list[15];
+        }
+
+        private void MakeTextBold8(List<int> ints)
+        {
+            if (ints.Contains(30))
+            {
+                textBox30.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            } if (ints.Contains(31))
+            {
+                textBox31.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(32))
+            {
+                textBox32.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(33))
+            {
+                textBox33.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(34))
+            {
+                textBox34.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(35))
+            {
+                textBox35.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(36))
+            {
+                textBox36.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(37))
+            {
+                textBox37.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+        }
+
+        private void MakeTextBold12(List<int> ints)
+        {
+            if (ints.Contains(18))
+            {
+                textBox18.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            } if (ints.Contains(19))
+            {
+                textBox19.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(20))
+            {
+                textBox20.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(21))
+            {
+                textBox21.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(22))
+            {
+                textBox22.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(23))
+            {
+                textBox23.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(24))
+            {
+                textBox24.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(25))
+            {
+                textBox25.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(26))
+            {
+                textBox26.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(27))
+            {
+                textBox27.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(28))
+            {
+                textBox28.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(29))
+            {
+                textBox29.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+        }
+
+        private void MakeTextBold16(List<int> ints)
+        {
+            if (ints.Contains(1))
+            {
+                textBox1.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            } if (ints.Contains(2))
+            {
+                textBox2.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(3))
+            {
+                textBox3.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(4))
+            {
+                textBox4.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(5))
+            {
+                textBox5.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(6))
+            {
+                textBox6.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(7))
+            {
+                textBox7.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(8))
+            {
+                textBox8.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(9))
+            {
+                textBox9.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(10))
+            {
+                textBox10.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(11))
+            {
+                textBox11.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(12))
+            {
+                textBox12.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(13))
+            {
+                textBox13.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(14))
+            {
+                textBox14.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(15))
+            {
+                textBox15.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
+            if (ints.Contains(16))
+            {
+                textBox16.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+            }
         }
 
         private void MakeTextRegular8(List<int> ints)
@@ -674,7 +689,7 @@ namespace VisualPerception.Student
             var numberHallmark = reproducedIncentive.Count(s => Lst1.Contains(s));
             var possessesHallmark = (numberHallmark / double.Parse(numberReproducedOfIncentive + ",0")) * 100;
 
-            context.Experiment3Result.Add(new Experiment3Result
+            context.Experiment4Result.Add(new Experiment4Result
             {
                 IdUser = id,
                 ProvidedIncentive = providedIncentiveString,
@@ -692,7 +707,7 @@ namespace VisualPerception.Student
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var nForm = new Form16();
+            var nForm = new Form19();
             nForm.FormClosed += (o, ep) => this.Close();
             nForm.Show();
             this.Hide();

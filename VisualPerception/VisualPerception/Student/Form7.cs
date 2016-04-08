@@ -107,8 +107,56 @@ namespace VisualPerception.Student
                         Thread.Sleep(500);
                         label2.Visible = true;
                     } break;
-                case "Опыт 4": break;
-                case "Опыт 5": break;
+                case "Опыт 4":
+                    if (!context.Experiment4Result.Any())
+                    {
+                        var nForm = new Form17();
+                        nForm.FormClosed += (o, ep) => this.Close();
+                        nForm.Show();
+                        this.Hide();
+                        break;
+                    }
+
+                    var userExperiment4 = context.Experiment4Result.First(x => x.IdUser == id);
+                    if (userExperiment4 == null)
+                    {
+                        var nForm = new Form17();
+                        nForm.FormClosed += (o, ep) => this.Close();
+                        nForm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        label2.Visible = false;
+                        label2.Update();
+                        Thread.Sleep(500);
+                        label2.Visible = true;
+                    } break;
+                case "Опыт 5": 
+                    if (!context.Experiment5Result.Any())
+                    {
+                        var nForm = new Form17();
+                        nForm.FormClosed += (o, ep) => this.Close();
+                        nForm.Show();
+                        this.Hide();
+                        break;
+                    }
+
+                    var userExperiment5 = context.Experiment5Result.First(x => x.IdUser == id);
+                    if (userExperiment5 == null)
+                    {
+                        var nForm = new Form17();
+                        nForm.FormClosed += (o, ep) => this.Close();
+                        nForm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        label2.Visible = false;
+                        label2.Update();
+                        Thread.Sleep(500);
+                        label2.Visible = true;
+                    } break;
             }
         }
     }

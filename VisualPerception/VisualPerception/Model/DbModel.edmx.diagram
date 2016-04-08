@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b651315954274b95917da6540269692a" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="VisualPerceptionModel.Experiment1Result" Width="1.5" PointX="2.875" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="VisualPerceptionModel.Experiment2Result" Width="1.5" PointX="4.875" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VisualPerceptionModel.Experiment3Result" Width="1.5" PointX="6.875" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="VisualPerceptionModel.Experiment4Result" Width="1.5" PointX="2.125" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="VisualPerceptionModel.Experiment5Result" Width="1.5" PointX="5.125" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="VisualPerceptionModel.ExperimentData" Width="1.5" PointX="6.875" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="VisualPerceptionModel.ExperimentSetting" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+      <Diagram DiagramId="d62d9608fef3470394fe00f25ac5c7ee" Name="Diagram1">
+        <EntityTypeShape EntityType="VisualPerceptionModel.Experiment1Result" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VisualPerceptionModel.Experiment2Result" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VisualPerceptionModel.Experiment3Result" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VisualPerceptionModel.Experiment4Result" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VisualPerceptionModel.Experiment5Result" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VisualPerceptionModel.ExperimentData" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VisualPerceptionModel.ExperimentSetting" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="VisualPerceptionModel.User" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
         <AssociationConnector Association="VisualPerceptionModel.FK_Experiment1Result_User" ManuallyRouted="false" />
         <AssociationConnector Association="VisualPerceptionModel.FK_Experiment2Result_User" ManuallyRouted="false" />
