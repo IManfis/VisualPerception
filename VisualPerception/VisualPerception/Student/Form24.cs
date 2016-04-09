@@ -10,14 +10,16 @@ namespace VisualPerception.Student
     {
         public Form24()
         {
+            InitializeComponent();
+        }
+
+        public Form24(int id)
+        {
             var context = new VisualPerceptionContext();
             var presenting = int.Parse(context.ExperimentSetting.First(x => x.Name == "Предъявлений").Value);
             CreateTable(presenting);
             InitializeComponent();
 
-            var count = context.User.Count();
-            var user = context.User.ToList();
-            var id = user[count - 1].Id;
             var experimentResult = context.Experiment1Result.Where(x => x.IdUser == id).ToList();
 
             var row = 0;

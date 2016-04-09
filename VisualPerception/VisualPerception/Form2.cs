@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using VisualPerception.Student;
+using VisualPerception.Teacher;
 
 namespace VisualPerception
 {

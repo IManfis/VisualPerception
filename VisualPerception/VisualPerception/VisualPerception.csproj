@@ -226,6 +226,36 @@
     <Compile Include="Student\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\Form29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\Form29.Designer.cs">
+      <DependentUpon>Form29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\Form30.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\Form30.Designer.cs">
+      <DependentUpon>Form30.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\Form31.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\Form31.Designer.cs">
+      <DependentUpon>Form31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\Form32.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\Form32.Designer.cs">
+      <DependentUpon>Form32.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\Form33.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\Form33.Designer.cs">
+      <DependentUpon>Form33.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\Form4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +359,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\Form29.resx">
+      <DependentUpon>Form29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\Form30.resx">
+      <DependentUpon>Form30.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\Form31.resx">
+      <DependentUpon>Form31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\Form32.resx">
+      <DependentUpon>Form32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\Form33.resx">
+      <DependentUpon>Form33.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>

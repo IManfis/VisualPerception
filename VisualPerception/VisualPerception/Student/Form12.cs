@@ -35,7 +35,7 @@ namespace VisualPerception.Student
             var context = new VisualPerceptionContext();
             var presenting = context.ExperimentSetting.First(x => x.Name == "Предъявлений").Value;
             var word = context.ExperimentSetting.First(x => x.Name == "Слов").Value;
-            var time = int.Parse(context.ExperimentSetting.First(x => x.Name == "Время").Value);
+            var time = double.Parse(context.ExperimentSetting.First(x => x.Name == "Время").Value) * 1000;
 
             Header(Number, presenting);
 
@@ -45,7 +45,7 @@ namespace VisualPerception.Student
 
             UpdateTextbox(int.Parse(word));
 
-            Thread.Sleep(time * 1000);
+            Thread.Sleep(int.Parse(time.ToString()));
 
             ClearTextbox(int.Parse(word));
 
