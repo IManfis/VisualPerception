@@ -34,11 +34,6 @@ namespace VisualPerception.Student
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void DeleteTextBox()
         {
             for (var i = this.Controls.Count - 1; i >= 0; i--)
@@ -112,18 +107,37 @@ namespace VisualPerception.Student
             var row = 0;
             foreach (var result in experimentResult)
             {
+                var String = "";
+                var provided = result.ProvidedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                var reproduced = result.ReproducedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                foreach (var i in reproduced)
+                {
+                    if (!provided.Contains(i))
+                    {
+                        String += i + ",";
+                    }
+                }
+
                 dataGridView1.Rows.Add();
                 var numberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[row].Cells[0];
                 numberDisplay.Value = result.NumberDisplay.ToString();
 
                 var providedIncentive = (DataGridViewTextBoxCell)dataGridView1.Rows[row].Cells[1];
-                providedIncentive.Value = result.ProvidedIncentive.ToString().ToLower();
+                providedIncentive.Value = result.ProvidedIncentive.ToLower();
 
                 var reproducedIncentive = (DataGridViewTextBoxCell)dataGridView1.Rows[row].Cells[2];
-                reproducedIncentive.Value = result.ReproducedIncentive.ToString().ToLower();
+                reproducedIncentive.Value = result.ReproducedIncentive.ToLower();
 
                 var _id = (DataGridViewTextBoxCell)dataGridView1.Rows[row].Cells[3];
                 _id.Value = result.Id;
+
+                var mistake = (DataGridViewTextBoxCell)dataGridView1.Rows[row].Cells[4];
+                mistake.Value = String.ToLower();
+
 
                 row++;
             }
@@ -209,6 +223,21 @@ namespace VisualPerception.Student
             var row = 0;
             foreach (var result in experimentResult)
             {
+                var String = "";
+                var provided = result.ProvidedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                var reproduced = result.ReproducedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                foreach (var i in reproduced)
+                {
+                    if (!provided.Contains(i))
+                    {
+                        String += i + ",";
+                    }
+                }
+
                 dataGridView2.Rows.Add();
                 var numberDisplay = (DataGridViewTextBoxCell)dataGridView2.Rows[row].Cells[0];
                 numberDisplay.Value = result.NumberDisplay.ToString();
@@ -221,6 +250,9 @@ namespace VisualPerception.Student
 
                 var _id = (DataGridViewTextBoxCell)dataGridView2.Rows[row].Cells[3];
                 _id.Value = result.Id;
+
+                var mistake = (DataGridViewTextBoxCell)dataGridView2.Rows[row].Cells[4];
+                mistake.Value = String.ToLower();
 
                 row++;
             }
@@ -307,6 +339,21 @@ namespace VisualPerception.Student
             var row = 0;
             foreach (var result in experimentResult)
             {
+                var String = "";
+                var provided = result.ProvidedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                var reproduced = result.ReproducedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                foreach (var i in reproduced)
+                {
+                    if (!provided.Contains(i))
+                    {
+                        String += i + ",";
+                    }
+                }
+
                 dataGridView3.Rows.Add();
                 var numberDisplay = (DataGridViewTextBoxCell)dataGridView3.Rows[row].Cells[0];
                 numberDisplay.Value = result.NumberDisplay.ToString();
@@ -319,6 +366,9 @@ namespace VisualPerception.Student
 
                 var _id = (DataGridViewTextBoxCell)dataGridView3.Rows[row].Cells[3];
                 _id.Value = result.Id;
+
+                var mistake = (DataGridViewTextBoxCell)dataGridView3.Rows[row].Cells[4];
+                mistake.Value = String.ToLower();
 
                 row++;
             }
@@ -398,6 +448,21 @@ namespace VisualPerception.Student
             var row = 0;
             foreach (var result in experimentResult)
             {
+                var String = "";
+                var provided = result.ProvidedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                var reproduced = result.ReproducedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                foreach (var i in reproduced)
+                {
+                    if (!provided.Contains(i))
+                    {
+                        String += i + ",";
+                    }
+                }
+
                 dataGridView4.Rows.Add();
                 var numberDisplay = (DataGridViewTextBoxCell)dataGridView4.Rows[row].Cells[0];
                 numberDisplay.Value = result.NumberDisplay.ToString();
@@ -410,6 +475,9 @@ namespace VisualPerception.Student
 
                 var _id = (DataGridViewTextBoxCell)dataGridView4.Rows[row].Cells[3];
                 _id.Value = result.Id;
+
+                var mistake = (DataGridViewTextBoxCell)dataGridView4.Rows[row].Cells[4];
+                mistake.Value = String.ToLower();
 
                 row++;
             }
@@ -515,6 +583,21 @@ namespace VisualPerception.Student
             var row = 0;
             foreach (var result in experimentResult)
             {
+                var String = "";
+                var provided = result.ProvidedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                var reproduced = result.ReproducedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                foreach (var i in reproduced)
+                {
+                    if (!provided.Contains(i))
+                    {
+                        String += i + ",";
+                    }
+                }
+
                 dataGridView5.Rows.Add();
                 var numberDisplay = (DataGridViewTextBoxCell)dataGridView5.Rows[row].Cells[0];
                 numberDisplay.Value = result.NumberDisplay.ToString();
@@ -527,6 +610,9 @@ namespace VisualPerception.Student
 
                 var _id = (DataGridViewTextBoxCell)dataGridView5.Rows[row].Cells[3];
                 _id.Value = result.Id;
+
+                var mistake = (DataGridViewTextBoxCell)dataGridView5.Rows[row].Cells[4];
+                mistake.Value = String.ToLower();
 
                 row++;
             }
