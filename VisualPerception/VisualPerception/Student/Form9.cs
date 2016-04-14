@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using VisualPerception.Model;
-using VisualPerception.Student;
 
-namespace VisualPerception
+namespace VisualPerception.Student
 {
     public partial class Form9 : Form
     {
@@ -15,6 +14,19 @@ namespace VisualPerception
         public Form9()
         {
             InitializeComponent();
+            var context = new VisualPerceptionContext();
+            var count = context.User.Count();
+            var user = context.User.ToList();
+            var id = user[count - 1].Id;
+            var perceprion = int.Parse(context.ExperimentSetting.First(x => x.Name == "Предъявлений").Value);
+            if (context.Experiment1Result.Any(x => x.IdUser == id) &&
+                context.Experiment1Result.Any(x => x.NumberDisplay == perceprion))
+            {
+                button2.Visible = false;
+                button4.Visible = true;
+                label2.Visible = true;
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
