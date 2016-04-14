@@ -9,8 +9,10 @@ namespace VisualPerception.Student
 {
     public partial class Form9 : Form
     {
-        public List<string> Lst = new List<string>();
-        public int Number = 1;
+        private readonly List<string> _lst = new List<string>();
+        private int _number = 1;
+        private bool _continue = false;
+        private int _id = 0;
         public Form9()
         {
             InitializeComponent();
@@ -27,6 +29,15 @@ namespace VisualPerception.Student
                 label2.Visible = true;
             }
 
+        }
+
+        public Form9(int number, int id)
+        {
+            InitializeComponent();
+            _number = number;
+            _continue = true;
+            button2.Text = "Продолжить опыт";
+            _id = id;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -49,7 +60,7 @@ namespace VisualPerception.Student
             var word = context.ExperimentSetting.First(x => x.Name == "Слов").Value;
             var time = double.Parse(context.ExperimentSetting.First(x => x.Name == "Время").Value) * 1000;
 
-            Header(Number, presenting);
+            Header(_number, presenting);
 
             UnShowTextbox();
 
@@ -200,15 +211,15 @@ namespace VisualPerception.Student
             var stimulModel = context.ExperimentData.ToList();
             Random random = new Random();
             int k;
-            Lst.Clear();
+            _lst.Clear();
             for (var i = 0; i < word; i++)
             {
                 while (true)
                 {
                     k = random.Next(stimulModel.Count);
-                    if (!Lst.Any(x => x.Equals(stimulModel[k].Stimul)))
+                    if (!_lst.Any(x => x.Equals(stimulModel[k].Stimul)))
                     {
-                        Lst.Add(stimulModel[k].Stimul.Trim().ToUpper());
+                        _lst.Add(stimulModel[k].Stimul.Trim().ToUpper());
                         break;
                     }
                 }
@@ -216,9 +227,9 @@ namespace VisualPerception.Student
 
             switch (word)
             {
-                case 8: panel3.Visible = true; panel3.BringToFront(); WriteToTextbox8(Lst); break;
-                case 12: panel2.Visible = true; panel2.BringToFront(); WriteToTextbox12(Lst); break;
-                case 16: panel1.Visible = true; panel1.BringToFront(); WriteToTextbox16(Lst); break;
+                case 8: panel3.Visible = true; panel3.BringToFront(); WriteToTextbox8(_lst); break;
+                case 12: panel2.Visible = true; panel2.BringToFront(); WriteToTextbox12(_lst); break;
+                case 16: panel1.Visible = true; panel1.BringToFront(); WriteToTextbox16(_lst); break;
             }
         }
 
@@ -287,10 +298,20 @@ namespace VisualPerception.Student
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var nForm = new Form10();
-            nForm.FormClosed += (o, ep) => this.Close();
-            nForm.Show();
-            this.Hide();
+            if (_continue)
+            {
+                var nForm = new Form34(_id);
+                nForm.FormClosed += (o, ep) => this.Close();
+                nForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                var nForm = new Form10();
+                nForm.FormClosed += (o, ep) => this.Close();
+                nForm.Show();
+                this.Hide();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -298,7 +319,7 @@ namespace VisualPerception.Student
             var context = new VisualPerceptionContext();
             var count = int.Parse(context.ExperimentSetting.First(x => x.Name == "Предъявлений").Value);
             WriteResultToDb();
-            if (Number == count + 1)
+            if (_number == count + 1)
             {
                 UnShowTextbox();
                 button4.Visible = true;
@@ -317,14 +338,14 @@ namespace VisualPerception.Student
             var id = user[count - 1].Id;
             var presenting = context.ExperimentSetting.First(x => x.Name == "Предъявлений").Value;
 
-            var providedIncentiveString = Lst.Aggregate("", (current, s) => current + (s + ","));
+            var providedIncentiveString = _lst.Aggregate("", (current, s) => current + (s + ","));
 
             var reproducedIncentiveString = textBox17.Text;
             reproducedIncentiveString = reproducedIncentiveString.Replace(" ", string.Empty).ToUpper();
             var reproducedIncentive = reproducedIncentiveString.Split(new char[] { ',', '.', '/' },
                 StringSplitOptions.RemoveEmptyEntries).ToList();
 
-            var numberReproducedOfIncentive = reproducedIncentive.Count(s => Lst.Contains(s));
+            var numberReproducedOfIncentive = reproducedIncentive.Count(s => _lst.Contains(s));
 
             context.Experiment1Result.Add(new Experiment1Result
             {
@@ -332,12 +353,12 @@ namespace VisualPerception.Student
                 ProvidedIncentive = providedIncentiveString,
                 ReproducedIncentive = reproducedIncentiveString,
                 NumberReproducedOfIncentive = numberReproducedOfIncentive,
-                NumberDisplay = Number,
+                NumberDisplay = _number,
                 AllNumberDisplay = int.Parse(presenting)
             });
             context.SaveChanges();
 
-            Number++;
+            _number++;
             Thread.Sleep(1000);
         }
     }

@@ -226,6 +226,12 @@
     <Compile Include="Student\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\Form34.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\Form34.Designer.cs">
+      <DependentUpon>Form34.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\Form29.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Form34.resx">
+      <DependentUpon>Form34.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\Form29.resx">
       <DependentUpon>Form29.cs</DependentUpon>

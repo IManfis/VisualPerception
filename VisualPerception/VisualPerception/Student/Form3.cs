@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
 using System.Windows.Forms;
 using VisualPerception.Model;
 
@@ -29,15 +31,54 @@ namespace VisualPerception.Student
 
         private void button1_Click(object sender, EventArgs e)
         {
+            label5.Visible = false;
             var Name = textBox1.Text;
             var GroupNumber = int.Parse(textBox2.Text);
 
             var context = new VisualPerceptionContext();
-            context.User.Add(new User{Name = Name, GroupNumber = GroupNumber});
-            //context.SaveChanges();
+            var user = context.User.ToList();
+            var number = int.Parse(context.ExperimentSetting.First(x => x.Name == "Предъявлений").Value);
 
-            label4.Visible = true;
-            button3.Visible = true;
+            if (user.Any(x => x.Name == Name &&
+                user.Any(m => m.GroupNumber == GroupNumber)))
+            {
+                var id = user.First(x => x.Name == Name).Id;
+
+                if (context.Experiment1Result.Count(x => x.IdUser == id) == number &&
+                    context.Experiment2Result.Count(x => x.IdUser == id) == number &&
+                    context.Experiment3Result.Count(x => x.IdUser == id) == number &&
+                    context.Experiment4Result.Count(x => x.IdUser == id) == number &&
+                    context.Experiment5Result.Count(x => x.IdUser == id) == number)
+                {
+                    label5.Visible = true;
+                }
+                else
+                {
+                    var result = MessageBox.Show("У Вас есть незавершенные опыты, хотите продолжить?", "Незавершенные опыты", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        var nForm = new Form34(id);
+                        nForm.FormClosed += (o, ep) => this.Close();
+                        nForm.Show();
+                        this.Hide();
+                    }
+                }
+            }
+            else
+            {
+                context.User.Add(new User { Name = Name, GroupNumber = GroupNumber });
+                //context.SaveChanges();
+
+                label4.Visible = true;
+                button3.Visible = true;   
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                e.Handled = true;
         }
     }
 }

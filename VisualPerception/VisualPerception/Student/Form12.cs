@@ -10,8 +10,10 @@ namespace VisualPerception.Student
 {
     public partial class Form12 : Form
     {
-        public List<string> Lst = new List<string>();
-        public int Number = 1;
+        private List<string> Lst = new List<string>();
+        private int Number = 1;
+        private bool Continue = false;
+        private int _id = 0;
         public Form12()
         {
             InitializeComponent();
@@ -27,6 +29,15 @@ namespace VisualPerception.Student
                 button4.Visible = true;
                 label2.Visible = true;
             }
+        }
+
+        public Form12(int number, int id)
+        {
+            InitializeComponent();
+            Number = number;
+            Continue = true;
+            button2.Text = "Продолжить опыт";
+            _id = id;
         }
 
         private void button1_Click(object sender, System.EventArgs e)
@@ -451,10 +462,20 @@ namespace VisualPerception.Student
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var nForm = new Form13();
-            nForm.FormClosed += (o, ep) => this.Close();
-            nForm.Show();
-            this.Hide();
+            if (Continue)
+            {
+                var nForm = new Form34(_id);
+                nForm.FormClosed += (o, ep) => this.Close();
+                nForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                var nForm = new Form13();
+                nForm.FormClosed += (o, ep) => this.Close();
+                nForm.Show();
+                this.Hide();
+            }
         }
     }
 }
