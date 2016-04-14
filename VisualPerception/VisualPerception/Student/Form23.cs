@@ -122,6 +122,9 @@ namespace VisualPerception.Student
                 var reproducedIncentive = (DataGridViewTextBoxCell)dataGridView1.Rows[row].Cells[2];
                 reproducedIncentive.Value = result.ReproducedIncentive.ToString().ToLower();
 
+                var _id = (DataGridViewTextBoxCell)dataGridView1.Rows[row].Cells[3];
+                _id.Value = result.Id;
+
                 row++;
             }
 
@@ -215,6 +218,9 @@ namespace VisualPerception.Student
 
                 var reproducedIncentive = (DataGridViewTextBoxCell)dataGridView2.Rows[row].Cells[2];
                 reproducedIncentive.Value = result.ReproducedIncentive.ToString().ToLower();
+
+                var _id = (DataGridViewTextBoxCell)dataGridView2.Rows[row].Cells[3];
+                _id.Value = result.Id;
 
                 row++;
             }
@@ -311,6 +317,9 @@ namespace VisualPerception.Student
                 var reproducedIncentive = (DataGridViewTextBoxCell)dataGridView3.Rows[row].Cells[2];
                 reproducedIncentive.Value = result.ReproducedIncentive.ToString().ToLower();
 
+                var _id = (DataGridViewTextBoxCell)dataGridView3.Rows[row].Cells[3];
+                _id.Value = result.Id;
+
                 row++;
             }
             var numberSum = experimentResult.Sum(experiment1Result => experiment1Result.PossessesHallmark);
@@ -398,6 +407,9 @@ namespace VisualPerception.Student
 
                 var reproducedIncentive = (DataGridViewTextBoxCell)dataGridView4.Rows[row].Cells[2];
                 reproducedIncentive.Value = result.ReproducedIncentive.ToString().ToLower();
+
+                var _id = (DataGridViewTextBoxCell)dataGridView4.Rows[row].Cells[3];
+                _id.Value = result.Id;
 
                 row++;
             }
@@ -513,6 +525,9 @@ namespace VisualPerception.Student
                 var reproducedIncentive = (DataGridViewTextBoxCell)dataGridView5.Rows[row].Cells[2];
                 reproducedIncentive.Value = result.ReproducedIncentive.ToString().ToLower();
 
+                var _id = (DataGridViewTextBoxCell)dataGridView5.Rows[row].Cells[3];
+                _id.Value = result.Id;
+
                 row++;
             }
 
@@ -582,6 +597,46 @@ namespace VisualPerception.Student
                 case 4: WriteTable5(_id);
                     break;
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var id = int.Parse(dataGridView5.CurrentRow.Cells[3].Value.ToString());
+
+            var nForm = new Form28(id);
+            nForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var id = int.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+
+            var nForm = new Form24(id);
+            nForm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var id = int.Parse(dataGridView2.CurrentRow.Cells[3].Value.ToString());
+
+            var nForm = new Form25(id);
+            nForm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var id = int.Parse(dataGridView3.CurrentRow.Cells[3].Value.ToString());
+
+            var nForm = new Form26(id);
+            nForm.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var id = int.Parse(dataGridView4.CurrentRow.Cells[3].Value.ToString());
+
+            var nForm = new Form27(id);
+            nForm.Show();
         }
     }
 }
