@@ -323,7 +323,7 @@ namespace VisualPerception
                 NumberDisplay = Number,
                 AllNumberDisplay = int.Parse(presenting)
             });
-            //context.SaveChanges();
+            context.SaveChanges();
 
             Number++;
             Thread.Sleep(1000);

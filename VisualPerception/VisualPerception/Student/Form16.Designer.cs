@@ -80,9 +80,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 17);
+            this.label1.Size = new System.Drawing.Size(504, 17);
             this.label1.TabIndex = 72;
-            this.label1.Text = "Результаты опыта №3";
+            this.label1.Text = "Результаты опыта №3(отличительный признак - размер шрифта)";
             // 
             // button1
             // 

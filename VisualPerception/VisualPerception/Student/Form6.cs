@@ -48,7 +48,7 @@ namespace VisualPerception.Student
                     k = random.Next(stimulModel.Count);
                     if (!lst.Any(x => x.Equals(stimulModel[k].Stimul)))
                     {
-                        lst.Add(stimulModel[k].Stimul);
+                        lst.Add(stimulModel[k].Stimul.ToUpper());
                         break;
                     }
                 }
