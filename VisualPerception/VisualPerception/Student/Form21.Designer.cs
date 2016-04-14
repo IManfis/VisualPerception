@@ -659,7 +659,7 @@
             this.Controls.Add(this.textBox17);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form21";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Исследование избирательности восприятия";
