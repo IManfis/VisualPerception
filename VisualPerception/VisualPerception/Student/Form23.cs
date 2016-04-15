@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using VisualPerception.Model;
 
@@ -723,6 +725,113 @@ namespace VisualPerception.Student
 
             var nForm = new Form27(id);
             nForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.InitialDirectory = "c:\\";
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            var context = new VisualPerceptionContext();
+            var user = context.User.FirstOrDefault(x => x.Id == _id);
+
+            var result = new StringBuilder();
+
+            var name ="Имя испытуемого: " + user.Name + "\n";
+            var group = "Номер группы: " + user.GroupNumber + "\nРезультаты опытов\n";
+
+            result.Append(name);
+            result.Append(group);
+            result.Append(experimentResult1());
+            result.Append(experimentResult2());
+            
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                var filename = saveFileDialog1.FileName;
+                System.IO.File.WriteAllText(filename, result.ToString());
+            }
+        }
+
+        private string experimentResult1()
+        {
+            var context = new VisualPerceptionContext();
+            var user = context.User.FirstOrDefault(x => x.Id == _id);
+
+            var result = new StringBuilder();
+
+            var numberExperiment = "Опыт №1\n\n";
+            var experimentResult = context.Experiment1Result.Where(x => x.IdUser == _id).ToList();
+
+            var header = string.Format("{0}|{1}", "Номер стимула", "Количество воспринятых слов\n");
+            var line1 = "------------------------------------------\n";
+            result.Append(numberExperiment);
+
+            foreach (var i in experimentResult)
+            {
+                var rez = string.Format("Предъявленный ряд №{0}: {1}\nВоспринятый ряд: {2}\n", i.NumberDisplay,
+                    i.ProvidedIncentive, i.ReproducedIncentive);
+                result.Append(rez);
+            }
+            result.Append("\n\n");
+            result.Append(header);
+            result.Append(line1);
+
+            foreach (var i in experimentResult)
+            {
+                var line2 = string.Format("     {0}       |             {1}\n",
+                    i.NumberDisplay,
+                    i.NumberReproducedOfIncentive);
+                result.Append(line2);
+                result.Append(line1);
+            }
+
+            return result.ToString();
+        }
+
+        private string experimentResult2()
+        {
+            var context = new VisualPerceptionContext();
+
+            var result = new StringBuilder();
+
+            var numberExperiment = "Опыт №2\n\n";
+            var experimentResult = context.Experiment2Result.Where(x => x.IdUser == _id).ToList();
+
+            var header = string.Format("{0}|{1}|{2}|{3}", 
+                "Номер стимула", 
+                "Количество воспринятых слов", 
+                "Количество групп, в которые входят воспринятые слова", 
+                "Относительное распределение слов по группам\n");
+            var line1 = "-------------------------------------------------------------------------------------------------------------------------------------------\n";
+            result.Append(numberExperiment);
+
+            foreach (var i in experimentResult)
+            {
+                var rez = string.Format("Предъявленный ряд №{0}: {1}\nВоспринятый ряд: {2}\n", i.NumberDisplay,
+                    i.ProvidedIncentive, i.ReproducedIncentive);
+                result.Append(rez);
+            }
+            result.Append("\n\n");
+            result.Append(header);
+            result.Append(line1);
+
+            foreach (var i in experimentResult)
+            {
+                var line2 = string.Format("     {0}       |             {1}             |                         {2}                          |                    {3}\n",
+                    i.NumberDisplay,
+                    i.NumberReproducedOfIncentive,
+                    i.NumberGroupsWithWord,
+                    i.RelativeDistributionWord);
+                result.Append(line2);
+                result.Append(line1);
+            }
+
+            return result.ToString();
         }
     }
 }
