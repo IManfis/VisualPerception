@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -748,6 +749,9 @@ namespace VisualPerception.Student
             result.Append(group);
             result.Append(experimentResult1());
             result.Append(experimentResult2());
+            result.Append(experimentResult3());
+            result.Append(experimentResult4());
+            result.Append(experimentResult5());
             
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -827,6 +831,160 @@ namespace VisualPerception.Student
                     i.NumberReproducedOfIncentive,
                     i.NumberGroupsWithWord,
                     i.RelativeDistributionWord);
+                result.Append(line2);
+                result.Append(line1);
+            }
+
+            return result.ToString();
+        }
+
+        private string experimentResult3()
+        {
+            var context = new VisualPerceptionContext();
+
+            var result = new StringBuilder();
+
+            var numberExperiment = "Опыт №3\n\n";
+            var experimentResult = context.Experiment3Result.Where(x => x.IdUser == _id).ToList();
+
+            var header = string.Format("{0}|{1}|{2}",
+                "Номер стимула",
+                "Количество воспринятых слов",
+                "Из них, обладающих отличительным признаком\n");
+            var line1 = "-------------------------------------------------------------------------------------\n";
+            result.Append(numberExperiment);
+
+            foreach (var i in experimentResult)
+            {
+                var reproduced = i.Hallmark.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+                var words = i.ProvidedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+                var list = "";
+                for (var j = 0; j < reproduced.Count; j++)
+                {
+                    list += words[int.Parse(reproduced[j]) - 1] + ",";
+                }
+
+
+                var rez = string.Format("Предъявленный ряд №{0}: {1}\nВоспринятый ряд: {2}\nСлова с отличительным признаком: {3}\n", i.NumberDisplay,
+                    i.ProvidedIncentive, i.ReproducedIncentive,list);
+                result.Append(rez);
+            }
+            result.Append("\n\n");
+            result.Append(header);
+            result.Append(line1);
+
+            foreach (var i in experimentResult)
+            {
+                var line2 = string.Format("     {0}       |             {1}             |                    {2}\n",
+                    i.NumberDisplay,
+                    i.NumberReproducedOfIncentive,
+                    i.PossessesHallmark);
+                result.Append(line2);
+                result.Append(line1);
+            }
+
+            return result.ToString();
+        }
+
+        private string experimentResult4()
+        {
+            var context = new VisualPerceptionContext();
+
+            var result = new StringBuilder();
+
+            var numberExperiment = "Опыт №4\n\n";
+            var experimentResult = context.Experiment4Result.Where(x => x.IdUser == _id).ToList();
+
+            var header = string.Format("{0}|{1}|{2}",
+                "Номер стимула",
+                "Количество воспринятых слов",
+                "Из них, обладающих отличительным признаком\n");
+            var line1 = "-------------------------------------------------------------------------------------\n";
+            result.Append(numberExperiment);
+
+            foreach (var i in experimentResult)
+            {
+                var reproduced = i.Hallmark.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+                var words = i.ProvidedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+                var list = "";
+                for (var j = 0; j < reproduced.Count; j++)
+                {
+                    list += words[int.Parse(reproduced[j]) - 1] + ",";
+                }
+
+
+                var rez = string.Format("Предъявленный ряд №{0}: {1}\nВоспринятый ряд: {2}\nСлова с отличительным признаком: {3}\n", i.NumberDisplay,
+                    i.ProvidedIncentive, i.ReproducedIncentive, list);
+                result.Append(rez);
+            }
+            result.Append("\n\n");
+            result.Append(header);
+            result.Append(line1);
+
+            foreach (var i in experimentResult)
+            {
+                var line2 = string.Format("     {0}       |             {1}             |                    {2}\n",
+                    i.NumberDisplay,
+                    i.NumberReproducedOfIncentive,
+                    i.PossessesHallmark);
+                result.Append(line2);
+                result.Append(line1);
+            }
+
+            return result.ToString();
+        }
+
+        private string experimentResult5()
+        {
+            var context = new VisualPerceptionContext();
+
+            var result = new StringBuilder();
+
+            var numberExperiment = "Опыт 5\n\n";
+            var experimentResult = context.Experiment5Result.Where(x => x.IdUser == _id).ToList();
+
+            var header = string.Format("{0}|{1}|{2}|{3}|{4}",
+                "Номер стимула",
+                "Количество воспринятых слов",
+                "Количество групп, в которые входят воспринятые слова",
+                "Относительное распределение слов по группам",
+                "Количество групп со словами, имеющими отличительный признак\n");
+            var line1 = "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+            result.Append(numberExperiment);
+
+            foreach (var i in experimentResult)
+            {
+                var reproduced = i.Hallmark.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+                var words = i.ProvidedIncentive.Split(new char[] { ',' },
+                StringSplitOptions.RemoveEmptyEntries).ToList();
+                var list = "";
+                for (var j = 0; j < reproduced.Count; j++)
+                {
+                    list += words[int.Parse(reproduced[j]) - 1] + ",";
+                }
+
+
+                var rez = string.Format("Предъявленный ряд №{0}: {1}\nВоспринятый ряд: {2}\nСлова с отличительным признаком: {3}\n", i.NumberDisplay,
+                    i.ProvidedIncentive, i.ReproducedIncentive, list);
+                result.Append(rez);
+            }
+            result.Append("\n\n");
+            result.Append(header);
+            result.Append(line1);
+
+            foreach (var i in experimentResult)
+            {
+                var line2 = string.Format("     {0}       |             {1}             |                         {2}                          |                     {3}                  |                             {4}\n",
+                    i.NumberDisplay,
+                    i.NumberReproducedOfIncentive,
+                    i.NumberGroupsWithWord,
+                    i.RelativeDistributionWord.ToString("##.#0"),
+                    i.NumberGroupsHallmark);
                 result.Append(line2);
                 result.Append(line1);
             }
