@@ -42,12 +42,12 @@ namespace VisualPerception.Student
 
             for (var i = upperValue1; i < upperValue2; i++)
             {
-                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 2) - 4)).PossessesHallmark.ToString("##.000");
+                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 2) - 4)).PossessesHallmark.ToString("##.#");
             }
 
             var divider = presenting + ",0";
             var average = numberSum / double.Parse(divider);
-            this.Controls["textBox" + upperValue2].Text = average.ToString("##.000");
+            this.Controls["textBox" + upperValue2].Text = average.ToString("##.#");
         }
 
         private void CreateTable(int presenting)

@@ -150,7 +150,7 @@ namespace VisualPerception.Student
                 case "Опыт 5": 
                     if (!context.Experiment5Result.Any())
                     {
-                        var nForm = new Form17();
+                        var nForm = new Form21();
                         nForm.FormClosed += (o, ep) => this.Close();
                         nForm.Show();
                         this.Hide();
@@ -159,7 +159,7 @@ namespace VisualPerception.Student
 
                     if (!context.Experiment5Result.Any(x => x.IdUser == id))
                     {
-                        var nForm = new Form17();
+                        var nForm = new Form21();
                         nForm.FormClosed += (o, ep) => this.Close();
                         nForm.Show();
                         this.Hide();

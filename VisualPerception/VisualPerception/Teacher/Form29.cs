@@ -41,6 +41,13 @@ namespace VisualPerception.Teacher
                 nForm.Show();
                 this.Hide();
             }
+            if (radioButton4.Checked)
+            {
+                var nForm = new Form35();
+                nForm.FormClosed += (o, ep) => this.Close();
+                nForm.Show();
+                this.Hide();
+            }
         }
     }
 }

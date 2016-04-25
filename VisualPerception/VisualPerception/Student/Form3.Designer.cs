@@ -38,6 +38,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -54,7 +55,7 @@
             this.button1.Location = new System.Drawing.Point(326, 237);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 19;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Зарегистрировать";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -65,7 +66,7 @@
             this.textBox2.MaxLength = 10;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(244, 20);
-            this.textBox2.TabIndex = 18;
+            this.textBox2.TabIndex = 2;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label2
@@ -82,23 +83,24 @@
             this.textBox1.Location = new System.Drawing.Point(258, 155);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(244, 20);
-            this.textBox1.TabIndex = 16;
+            this.textBox1.TabIndex = 1;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(258, 139);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 13);
+            this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Фамилия и Имя:(русский)";
+            this.label1.Text = "Фамилия и Имя:";
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(607, 427);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 23);
-            this.button3.TabIndex = 14;
+            this.button3.TabIndex = 4;
             this.button3.Text = "Далее";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
@@ -138,11 +140,24 @@
             this.label5.Text = "Такой пользователь уже зарегестрирован!";
             this.label5.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(214, 364);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(307, 17);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Измените раскладку клавиатуры на русскую!";
+            this.label6.Visible = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 462);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -174,5 +189,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

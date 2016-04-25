@@ -68,7 +68,7 @@ namespace VisualPerception.Student
             else
             {
                 context.User.Add(new User { Name = Name, GroupNumber = GroupNumber });
-                //context.SaveChanges();
+                context.SaveChanges();
 
                 label4.Visible = true;
                 button3.Visible = true;   
@@ -79,6 +79,17 @@ namespace VisualPerception.Student
         {
             if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
                 e.Handled = true;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            label6.Visible = false;
+            var l = e.KeyChar;
+            if ((l < 'А' || l > 'я') && l != '\b' && l != '.' && l != ' ')
+            {
+                e.Handled = true;
+                label6.Visible = true;
+            }
         }
     }
 }

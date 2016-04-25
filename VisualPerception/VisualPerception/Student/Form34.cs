@@ -22,12 +22,13 @@ namespace VisualPerception.Student
             WriteData(id);
 
             var context = new VisualPerceptionContext();
+            var count = int.Parse(context.ExperimentSetting.FirstOrDefault(x => x.Name == "Предъявлений").Value);
 
-            if (context.Experiment1Result.Any(x => x.IdUser == id) &&
-                context.Experiment2Result.Any(x => x.IdUser == id) &&
-                context.Experiment3Result.Any(x => x.IdUser == id) &&
-                context.Experiment4Result.Any(x => x.IdUser == id) &&
-                context.Experiment5Result.Any(x => x.IdUser == id))
+            if (context.Experiment1Result.Count(x => x.IdUser == id) == count &&
+                context.Experiment2Result.Count(x => x.IdUser == id) == count &&
+                context.Experiment3Result.Count(x => x.IdUser == id) == count &&
+                context.Experiment4Result.Count(x => x.IdUser == id) == count &&
+                context.Experiment5Result.Count(x => x.IdUser == id) == count)
             {
                 button1.Visible = true;
                 button3.Visible = false;
@@ -178,7 +179,7 @@ namespace VisualPerception.Student
 
 
             var rez = experimentResult[experimentResult.Count - 1];
-            var rez1 = experimentResult1[experimentResult2.Count - 1];
+            var rez1 = experimentResult1[experimentResult1.Count - 1];
             var rez2 = experimentResult2[experimentResult2.Count - 1];
             var rez3 = experimentResult3[experimentResult3.Count - 1];
             var rez4 = experimentResult4[experimentResult4.Count - 1];

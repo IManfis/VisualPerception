@@ -10,9 +10,9 @@ namespace VisualPerception.Student
 {
     public partial class Form12 : Form
     {
-        private List<string> Lst = new List<string>();
-        private int Number = 1;
-        private bool Continue = false;
+        private readonly List<string> _lst = new List<string>();
+        private int _number = 1;
+        private bool _continue = false;
         private int _id = 0;
         public Form12()
         {
@@ -34,8 +34,8 @@ namespace VisualPerception.Student
         public Form12(int number, int id)
         {
             InitializeComponent();
-            Number = number;
-            Continue = true;
+            _number = number;
+            _continue = true;
             button2.Text = "Продолжить опыт";
             _id = id;
         }
@@ -60,7 +60,7 @@ namespace VisualPerception.Student
             var word = context.ExperimentSetting.First(x => x.Name == "Слов").Value;
             var time = double.Parse(context.ExperimentSetting.First(x => x.Name == "Время").Value) * 1000;
 
-            Header(Number, presenting);
+            Header(_number, presenting);
 
             UnShowTextbox();
 
@@ -73,6 +73,8 @@ namespace VisualPerception.Student
             ClearTextbox(int.Parse(word));
 
             ShowTextbox();
+
+            textBox17.Focus();
         }
 
         private void Header(int number, string presenting)
@@ -211,15 +213,15 @@ namespace VisualPerception.Student
             var stimulModel = context.ExperimentData.ToList();
             Random random = new Random();
             int k;
-            Lst.Clear();
+            _lst.Clear();
             for (var i = 0; i < word; i++)
             {
                 while (true)
                 {
                     k = random.Next(stimulModel.Count);
-                    if (!Lst.Any(x => x.Equals(stimulModel[k].Stimul)))
+                    if (!_lst.Any(x => x.Equals(stimulModel[k].Stimul)))
                     {
-                        Lst.Add(stimulModel[k].Stimul.Trim().ToUpper());
+                        _lst.Add(stimulModel[k].Stimul.Trim().ToUpper());
                         break;
                     }
                 }
@@ -227,9 +229,9 @@ namespace VisualPerception.Student
 
             switch (word)
             {
-                case 8: panel3.Visible = true; panel3.Location = new Point(12,95); panel3.BringToFront(); WriteToTextbox8(Lst); break;
-                case 12: panel2.Visible = true; panel2.Location = new Point(12, 95); panel2.BringToFront(); WriteToTextbox12(Lst); break;
-                case 16: panel1.Visible = true; panel1.Location = new Point(12, 95); panel1.BringToFront(); WriteToTextbox16(Lst); break;
+                case 8: panel3.Visible = true; panel3.Location = new Point(12,95); panel3.BringToFront(); WriteToTextbox8(_lst); break;
+                case 12: panel2.Visible = true; panel2.Location = new Point(12, 95); panel2.BringToFront(); WriteToTextbox12(_lst); break;
+                case 16: panel1.Visible = true; panel1.Location = new Point(12, 95); panel1.BringToFront(); WriteToTextbox16(_lst); break;
             }
         }
 
@@ -301,7 +303,7 @@ namespace VisualPerception.Student
             var context = new VisualPerceptionContext();
             var count = int.Parse(context.ExperimentSetting.First(x => x.Name == "Предъявлений").Value);
             WriteResultToDb();
-            if (Number == count + 1)
+            if (_number == count + 1)
             {
                 UnShowTextbox();
                 button4.Visible = true;
@@ -321,14 +323,14 @@ namespace VisualPerception.Student
             var presenting = context.ExperimentSetting.First(x => x.Name == "Предъявлений").Value;
             var word = int.Parse(context.ExperimentSetting.First(x => x.Name == "Слов").Value);
 
-            var providedIncentiveString = Lst.Aggregate("", (current, s) => current + (s + ","));
+            var providedIncentiveString = _lst.Aggregate("", (current, s) => current + (s + ","));
 
             var reproducedIncentiveString = textBox17.Text;
             reproducedIncentiveString = reproducedIncentiveString.Replace(" ", string.Empty).ToUpper();
-            var reproducedIncentive = reproducedIncentiveString.Split(new char[] { ',', '.', '/' },
+            var reproducedIncentive = reproducedIncentiveString.Split(new char[] { ',', '.'},
                 StringSplitOptions.RemoveEmptyEntries).ToList();
 
-            var numberReproducedOfIncentive = reproducedIncentive.Count(s => Lst.Contains(s));
+            var numberReproducedOfIncentive = reproducedIncentive.Count(s => _lst.Contains(s));
             var numberOfGroups = 0;
             switch (word)
             {
@@ -346,12 +348,12 @@ namespace VisualPerception.Student
                 NumberReproducedOfIncentive = numberReproducedOfIncentive,
                 NumberGroupsWithWord = numberOfGroups,
                 RelativeDistributionWord = numberReproducedOfIncentive / double.Parse(numberOfGroups + ",0"),
-                NumberDisplay = Number,
+                NumberDisplay = _number,
                 AllNumberDisplay = int.Parse(presenting)
             });
             context.SaveChanges();
 
-            Number++;
+            _number++;
             Thread.Sleep(1000);
         }
 
@@ -359,13 +361,13 @@ namespace VisualPerception.Student
         {
             var numberOfGroups = 0;
 
-            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t);
+            var group1 = reproducedIncentive.Count(t => _lst[0] == t || _lst[1] == t);
 
-            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t);
+            var group2 = reproducedIncentive.Count(t => _lst[2] == t || _lst[3] == t);
 
-            var group3 = reproducedIncentive.Count(t => Lst[4] == t || Lst[5] == t);
+            var group3 = reproducedIncentive.Count(t => _lst[4] == t || _lst[5] == t);
 
-            var group4 = reproducedIncentive.Count(t => Lst[6] == t || Lst[7] == t);
+            var group4 = reproducedIncentive.Count(t => _lst[6] == t || _lst[7] == t);
 
             if (group1 > 0)
             {
@@ -394,13 +396,13 @@ namespace VisualPerception.Student
         {
             var numberOfGroups = 0;
 
-            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t || Lst[4] == t);
+            var group1 = reproducedIncentive.Count(t => _lst[0] == t || _lst[1] == t || _lst[4] == t);
 
-            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t || Lst[5] == t);
+            var group2 = reproducedIncentive.Count(t => _lst[2] == t || _lst[3] == t || _lst[5] == t);
 
-            var group3 = reproducedIncentive.Count(t => Lst[8] == t || Lst[9] == t || Lst[6] == t);
+            var group3 = reproducedIncentive.Count(t => _lst[8] == t || _lst[9] == t || _lst[6] == t);
 
-            var group4 = reproducedIncentive.Count(t => Lst[10] == t || Lst[11] == t || Lst[7] == t);
+            var group4 = reproducedIncentive.Count(t => _lst[10] == t || _lst[11] == t || _lst[7] == t);
 
             if (group1 > 0)
             {
@@ -429,13 +431,13 @@ namespace VisualPerception.Student
         {
             var numberOfGroups = 0;
 
-            var group1 = reproducedIncentive.Count(t => Lst[0] == t || Lst[1] == t || Lst[4] == t || Lst[5] == t);
+            var group1 = reproducedIncentive.Count(t => _lst[0] == t || _lst[1] == t || _lst[4] == t || _lst[5] == t);
 
-            var group2 = reproducedIncentive.Count(t => Lst[2] == t || Lst[3] == t || Lst[6] == t || Lst[7] == t);
+            var group2 = reproducedIncentive.Count(t => _lst[2] == t || _lst[3] == t || _lst[6] == t || _lst[7] == t);
 
-            var group3 = reproducedIncentive.Count(t => Lst[8] == t || Lst[9] == t || Lst[12] == t || Lst[13] == t);
+            var group3 = reproducedIncentive.Count(t => _lst[8] == t || _lst[9] == t || _lst[12] == t || _lst[13] == t);
 
-            var group4 = reproducedIncentive.Count(t => Lst[10] == t || Lst[11] == t || Lst[14] == t || Lst[15] == t);
+            var group4 = reproducedIncentive.Count(t => _lst[10] == t || _lst[11] == t || _lst[14] == t || _lst[15] == t);
 
             if (group1 > 0)
             {
@@ -462,7 +464,7 @@ namespace VisualPerception.Student
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (Continue)
+            if (_continue)
             {
                 var nForm = new Form34(_id);
                 nForm.FormClosed += (o, ep) => this.Close();
@@ -475,6 +477,15 @@ namespace VisualPerception.Student
                 nForm.FormClosed += (o, ep) => this.Close();
                 nForm.Show();
                 this.Hide();
+            }
+        }
+
+        private void textBox17_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var l = e.KeyChar;
+            if ((l < 'А' || l > 'я') && l != '\b' && l != '.' && l != ',')
+            {
+                e.Handled = true;
             }
         }
     }

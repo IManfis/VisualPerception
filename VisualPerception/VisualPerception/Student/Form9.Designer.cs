@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -78,20 +77,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(230, 360);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(274, 13);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "Введите воспринятые слова, разделяя их запятыми";
-            this.label4.Visible = false;
             // 
             // textBox17
             // 
@@ -100,15 +90,16 @@
             this.textBox17.Name = "textBox17";
             this.textBox17.ShortcutsEnabled = false;
             this.textBox17.Size = new System.Drawing.Size(709, 20);
-            this.textBox17.TabIndex = 48;
+            this.textBox17.TabIndex = 2;
             this.textBox17.Visible = false;
+            this.textBox17.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox17_KeyPress);
             // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(576, 425);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(146, 25);
-            this.button4.TabIndex = 47;
+            this.button4.TabIndex = 4;
             this.button4.Text = "Просмотреть результаты";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Visible = false;
@@ -119,7 +110,7 @@
             this.button3.Location = new System.Drawing.Point(330, 402);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 46;
+            this.button3.TabIndex = 3;
             this.button3.Text = "Ввод";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
@@ -127,11 +118,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(106, 429);
+            this.button2.Location = new System.Drawing.Point(115, 429);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 23);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Начать эксперимент";
+            this.button2.Size = new System.Drawing.Size(74, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Начать";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -649,17 +640,27 @@
             this.label2.Text = "Данный опыт уже пройден!";
             this.label2.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(197, 360);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(340, 13);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "Введите воспринятые слова, разделяя их запятыми или точками";
+            this.label4.Visible = false;
+            // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 462);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox17);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -683,7 +684,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -733,5 +733,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }

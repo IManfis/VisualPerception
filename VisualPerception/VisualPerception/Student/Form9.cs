@@ -73,6 +73,8 @@ namespace VisualPerception.Student
             ClearTextbox(int.Parse(word));
 
             ShowTextbox();
+
+            textBox17.Focus();
         }
 
         private void Header(int number, string presenting)
@@ -342,7 +344,7 @@ namespace VisualPerception.Student
 
             var reproducedIncentiveString = textBox17.Text;
             reproducedIncentiveString = reproducedIncentiveString.Replace(" ", string.Empty).ToUpper();
-            var reproducedIncentive = reproducedIncentiveString.Split(new char[] { ',', '.', '/' },
+            var reproducedIncentive = reproducedIncentiveString.Split(new char[] { ',', '.'},
                 StringSplitOptions.RemoveEmptyEntries).ToList();
 
             var numberReproducedOfIncentive = reproducedIncentive.Count(s => _lst.Contains(s));
@@ -360,6 +362,15 @@ namespace VisualPerception.Student
 
             _number++;
             Thread.Sleep(1000);
+        }
+
+        private void textBox17_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var l = e.KeyChar;
+            if ((l < 'А' || l > 'я') && l != '\b' && l != '.' && l != ',')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

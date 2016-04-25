@@ -25,19 +25,20 @@ namespace VisualPerception.Student
         private void button2_Click(object sender, EventArgs e)
         {
             button2.Visible = false;
-            unShow();
-            text();
-            textboxUpdate();
+            UnShow();
+            TextBoxWrite();
+            TextboxUpdate();
             Thread.Sleep(2000);
-            textClear();
-            show();
+            TextClear();
+            Show();
+            textBox17.Focus();
         }
 
-        private void text()
+        private void TextBoxWrite()
         {
             var context = new VisualPerceptionContext();
             var stimulModel = context.ExperimentData.ToList();
-            Random random = new Random();
+            var random = new Random();
             int k;
             var lst = new List<string>();
 
@@ -72,7 +73,7 @@ namespace VisualPerception.Student
             textBox16.Text = lst[15];
         }
 
-        private void textboxUpdate()
+        private void TextboxUpdate()
         {
             textBox1.Update();
             textBox2.Update();
@@ -92,7 +93,7 @@ namespace VisualPerception.Student
             textBox16.Update();
         }
 
-        private void textClear()
+        private void TextClear()
         {
             textBox1.Text = "";
             textBox2.Text = "";
@@ -112,14 +113,14 @@ namespace VisualPerception.Student
             textBox16.Text = "";
         }
 
-        private void show()
+        private void Show()
         {
             label4.Visible = true;
             textBox17.Visible = true;
             button3.Visible = true;
         }
 
-        private void unShow()
+        private void UnShow()
         {
             label4.Visible = false;
             textBox17.Visible = false;
@@ -137,6 +138,15 @@ namespace VisualPerception.Student
             nForm.FormClosed += (o, ep) => this.Close();
             nForm.Show();
             this.Hide();
+        }
+
+        private void textBox17_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var l = e.KeyChar;
+            if ((l < 'А' || l > 'я') && l != '\b' && l != '.' && l != ',')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

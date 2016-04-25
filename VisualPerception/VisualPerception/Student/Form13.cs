@@ -49,12 +49,12 @@ namespace VisualPerception.Student
 
             for (var i = upperValue2; i < upperValue3; i++)
             {
-                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 3) - 5)).RelativeDistributionWord.ToString();
+                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 3) - 5)).RelativeDistributionWord.ToString("##.#");
             }
 
             var divider = presenting + ",0";
             var average = numberSum / double.Parse(divider);
-            this.Controls["textBox" + upperValue3].Text = average.ToString();
+            this.Controls["textBox" + upperValue3].Text = average.ToString("##.#");
         }
 
         private void CreateTable(int presenting)

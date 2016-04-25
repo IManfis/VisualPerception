@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -280,12 +279,12 @@ namespace VisualPerception.Student
 
             for (var i = upperValue2; i < upperValue3; i++)
             {
-                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 3) - 5)).RelativeDistributionWord.ToString();
+                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 3) - 5)).RelativeDistributionWord.ToString("##.#");
             }
 
             var divider = presenting + ",0";
             var average = numberSum / double.Parse(divider);
-            this.Controls["textBox" + upperValue3].Text = average.ToString();
+            this.Controls["textBox" + upperValue3].Text = average.ToString("##.#");
         }
 
         private void CreateTable3(int presenting)
@@ -389,12 +388,12 @@ namespace VisualPerception.Student
 
             for (var i = upperValue1; i < upperValue2; i++)
             {
-                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 2) - 4)).PossessesHallmark.ToString("##.000");
+                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 2) - 4)).PossessesHallmark.ToString("##.0");
             }
 
             var divider = presenting + ",0";
             var average = numberSum / double.Parse(divider);
-            this.Controls["textBox" + upperValue2].Text = average.ToString("##.000");
+            this.Controls["textBox" + upperValue2].Text = average.ToString("##.0");
         }
 
         private void CreateTable4(int presenting)
@@ -498,12 +497,12 @@ namespace VisualPerception.Student
 
             for (var i = upperValue1; i < upperValue2; i++)
             {
-                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 2) - 4)).PossessesHallmark.ToString("##.000");
+                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 2) - 4)).PossessesHallmark.ToString("##.0");
             }
 
             var divider = presenting + ",0";
             var average = numberSum / double.Parse(divider);
-            this.Controls["textBox" + upperValue2].Text = average.ToString("##.000");
+            this.Controls["textBox" + upperValue2].Text = average.ToString("##.0");
         }
 
         private void CreateTable5(int presenting)
@@ -648,12 +647,12 @@ namespace VisualPerception.Student
 
             for (var i = upperValue2; i < upperValue3; i++)
             {
-                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 3) - 7)).RelativeDistributionWord.ToString("##.00");
+                this.Controls["textBox" + i].Text = experimentResult.First(x => x.NumberDisplay == (i - (presenting * 3) - 7)).RelativeDistributionWord.ToString("##.0");
             }
 
             var divider = presenting + ",0";
             var average = numberSum / double.Parse(divider);
-            this.Controls["textBox" + upperValue3].Text = average.ToString("##.00");
+            this.Controls["textBox" + upperValue3].Text = average.ToString("##.0");
 
             var upperValue4 = upperValue3 + 1 + presenting;
 
@@ -664,7 +663,7 @@ namespace VisualPerception.Student
 
             var divider1 = presenting + ",0";
             var average1 = numberSumHallmark / double.Parse(divider1);
-            this.Controls["textBox" + upperValue4].Text = average1.ToString("##.00");
+            this.Controls["textBox" + upperValue4].Text = average1.ToString("##.0");
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
@@ -747,21 +746,21 @@ namespace VisualPerception.Student
 
             result.Append(name);
             result.Append(group);
-            result.Append(experimentResult1());
-            result.Append(experimentResult2());
-            result.Append(experimentResult3());
-            result.Append(experimentResult4());
-            result.Append(experimentResult5());
+            result.Append(ExperimentResult1());
+            result.Append(ExperimentResult2());
+            result.Append(ExperimentResult3());
+            result.Append(ExperimentResult4());
+            result.Append(ExperimentResult5());
             
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var filename = saveFileDialog1.FileName;
-                System.IO.File.WriteAllText(filename, result.ToString());
+                File.WriteAllText(filename, result.ToString());
             }
         }
 
-        private string experimentResult1()
+        private string ExperimentResult1()
         {
             var context = new VisualPerceptionContext();
             var user = context.User.FirstOrDefault(x => x.Id == _id);
@@ -797,7 +796,7 @@ namespace VisualPerception.Student
             return result.ToString();
         }
 
-        private string experimentResult2()
+        private string ExperimentResult2()
         {
             var context = new VisualPerceptionContext();
 
@@ -838,7 +837,7 @@ namespace VisualPerception.Student
             return result.ToString();
         }
 
-        private string experimentResult3()
+        private string ExperimentResult3()
         {
             var context = new VisualPerceptionContext();
 
@@ -888,7 +887,7 @@ namespace VisualPerception.Student
             return result.ToString();
         }
 
-        private string experimentResult4()
+        private string ExperimentResult4()
         {
             var context = new VisualPerceptionContext();
 
@@ -938,7 +937,7 @@ namespace VisualPerception.Student
             return result.ToString();
         }
 
-        private string experimentResult5()
+        private string ExperimentResult5()
         {
             var context = new VisualPerceptionContext();
 
