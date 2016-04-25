@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using VisualPerception.Model;
 using VisualPerception.Student;
 using VisualPerception.Teacher;
 

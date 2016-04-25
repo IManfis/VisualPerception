@@ -22,9 +22,9 @@ namespace VisualPerception.Model
         public int NumberGroupsWithWord { get; set; }
         public double RelativeDistributionWord { get; set; }
         public int NumberGroupsHallmark { get; set; }
+        public string Hallmark { get; set; }
         public int NumberDisplay { get; set; }
         public int AllNumberDisplay { get; set; }
-        public string Hallmark { get; set; }
     
         public virtual User User { get; set; }
     }
