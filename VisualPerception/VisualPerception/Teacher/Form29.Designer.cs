@@ -75,10 +75,10 @@
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton1.Location = new System.Drawing.Point(264, 196);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(192, 21);
+            this.radioButton1.Size = new System.Drawing.Size(155, 21);
             this.radioButton1.TabIndex = 8;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Создание базы стимулов";
+            this.radioButton1.Text = "Создание стимулов";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // label1

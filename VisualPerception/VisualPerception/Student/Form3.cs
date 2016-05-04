@@ -77,13 +77,19 @@ namespace VisualPerception.Student
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
+            label6.Visible = false;
+            label7.Visible = false;
             if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+            {
                 e.Handled = true;
+                label7.Visible = true;
+            }
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             label6.Visible = false;
+            label7.Visible = false;
             var l = e.KeyChar;
             if ((l < 'А' || l > 'я') && l != '\b' && l != '.' && l != ' ')
             {

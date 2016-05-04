@@ -47,7 +47,10 @@ namespace VisualPerception.Teacher
                 row++;
             }
 
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0];
+            if (dataGridView1.RowCount > 0)
+            {
+                dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0];   
+            }
         }
 
         private void Form32_Activated(object sender, EventArgs e)

@@ -15,11 +15,12 @@ namespace VisualPerception.Student
             var count = context.User.Count();
             var user = context.User.ToList();
             var id = user[count - 1].Id;
-            if (context.Experiment1Result.Any(x => x.IdUser == id) &&
-                context.Experiment2Result.Any(x => x.IdUser == id) &&
-                context.Experiment3Result.Any(x => x.IdUser == id) &&
-                context.Experiment4Result.Any(x => x.IdUser == id) &&
-                context.Experiment5Result.Any(x => x.IdUser == id))
+            var number = int.Parse(context.ExperimentSetting.FirstOrDefault(x => x.Name == "Предъявлений").Value);
+            if (context.Experiment1Result.Count(x => x.IdUser == id) == number &&
+                context.Experiment2Result.Count(x => x.IdUser == id) == number &&
+                context.Experiment3Result.Count(x => x.IdUser == id) == number &&
+                context.Experiment4Result.Count(x => x.IdUser == id) == number &&
+                context.Experiment5Result.Count(x => x.IdUser == id) == number)
             {
                 button1.Visible = false;
                 button2.Visible = false;
@@ -57,6 +58,7 @@ namespace VisualPerception.Student
                         nForm.FormClosed += (o, ep) => this.Close();
                         nForm.Show();
                         this.Hide();
+                        break;
                     }
 
                     if (!context.Experiment1Result.Any(x => x.IdUser == id))
@@ -82,6 +84,7 @@ namespace VisualPerception.Student
                         nForm.FormClosed += (o, ep) => this.Close();
                         nForm.Show();
                         this.Hide();
+                        break;
                     }
 
                     if (!context.Experiment2Result.Any(x => x.IdUser == id))
@@ -115,6 +118,7 @@ namespace VisualPerception.Student
                         nForm.FormClosed += (o, ep) => this.Close();
                         nForm.Show();
                         this.Hide();
+                        break;
                     }
                     else
                     {
@@ -139,6 +143,7 @@ namespace VisualPerception.Student
                         nForm.FormClosed += (o, ep) => this.Close();
                         nForm.Show();
                         this.Hide();
+                        break;
                     }
                     else
                     {
@@ -150,7 +155,7 @@ namespace VisualPerception.Student
                 case "Опыт 5": 
                     if (!context.Experiment5Result.Any())
                     {
-                        var nForm = new Form21();
+                        var nForm = new Form20();
                         nForm.FormClosed += (o, ep) => this.Close();
                         nForm.Show();
                         this.Hide();
@@ -159,10 +164,11 @@ namespace VisualPerception.Student
 
                     if (!context.Experiment5Result.Any(x => x.IdUser == id))
                     {
-                        var nForm = new Form21();
+                        var nForm = new Form20();
                         nForm.FormClosed += (o, ep) => this.Close();
                         nForm.Show();
                         this.Hide();
+                        break;
                     }
                     else
                     {
