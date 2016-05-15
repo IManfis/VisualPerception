@@ -24,5 +24,11 @@ namespace VisualPerception
             nForm.Show();
             this.Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form36 d = new Form36();
+            d.Show();
+        }
     }
 }
