@@ -277,7 +277,7 @@ namespace VisualPerception.Student
             }
 
             Experiment2Result rez1 = new Experiment2Result();
-            if (experimentResult.Count != 0)
+            if (experimentResult1.Count != 0)
             {
                 rez1 = experimentResult1[experimentResult1.Count - 1];
             }
@@ -288,7 +288,7 @@ namespace VisualPerception.Student
             }
 
             Experiment3Result rez2 = new Experiment3Result();
-            if (experimentResult.Count != 0)
+            if (experimentResult2.Count != 0)
             {
                 rez2 = experimentResult2[experimentResult2.Count - 1];
             }
@@ -299,7 +299,7 @@ namespace VisualPerception.Student
             }
 
             Experiment4Result rez3 = new Experiment4Result();
-            if (experimentResult.Count != 0)
+            if (experimentResult3.Count != 0)
             {
                 rez3 = experimentResult3[experimentResult3.Count - 1];
             }
@@ -310,7 +310,7 @@ namespace VisualPerception.Student
             }
 
             Experiment5Result rez4 = new Experiment5Result();
-            if (experimentResult.Count != 0)
+            if (experimentResult4.Count != 0)
             {
                 rez4 = experimentResult4[experimentResult4.Count - 1];
             }
