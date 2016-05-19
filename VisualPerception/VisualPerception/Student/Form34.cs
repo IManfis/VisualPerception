@@ -72,6 +72,20 @@ namespace VisualPerception.Student
                     dataGridView1.Rows[0].DefaultCellStyle.BackColor = Color.Red;
                 }    
             }
+            else
+            {
+                dataGridView1.Rows.Add();
+
+                var name = (DataGridViewTextBoxCell)dataGridView1.Rows[0].Cells[0];
+                name.Value = "Опыт №1";
+
+                var numberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[0].Cells[1];
+                numberDisplay.Value = 0.ToString();
+
+                var allNumberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[0].Cells[2];
+                allNumberDisplay.Value = context.ExperimentSetting.FirstOrDefault(x => x.Name == "Предъявлений").Value;
+                dataGridView1.Rows[0].DefaultCellStyle.BackColor = Color.Red;
+            }
             
 
             var experimentResult1 = context.Experiment2Result.Where(x => x.IdUser == id).ToList();
@@ -98,7 +112,21 @@ namespace VisualPerception.Student
                 else
                 {
                     dataGridView1.Rows[1].DefaultCellStyle.BackColor = Color.Red;
-                }   
+                }
+            }
+            else
+            {
+                dataGridView1.Rows.Add();
+
+                var name = (DataGridViewTextBoxCell)dataGridView1.Rows[1].Cells[0];
+                name.Value = "Опыт №2";
+
+                var numberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[1].Cells[1];
+                numberDisplay.Value = 0.ToString();
+
+                var allNumberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[1].Cells[2];
+                allNumberDisplay.Value = context.ExperimentSetting.FirstOrDefault(x => x.Name == "Предъявлений").Value;
+                dataGridView1.Rows[1].DefaultCellStyle.BackColor = Color.Red;
             }
 
             var experimentResult2 = context.Experiment3Result.Where(x => x.IdUser == id).ToList();
@@ -124,7 +152,21 @@ namespace VisualPerception.Student
                 else
                 {
                     dataGridView1.Rows[2].DefaultCellStyle.BackColor = Color.Red;
-                }   
+                }
+            }
+            else
+            {
+                dataGridView1.Rows.Add();
+
+                var name = (DataGridViewTextBoxCell)dataGridView1.Rows[2].Cells[0];
+                name.Value = "Опыт №3";
+
+                var numberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[2].Cells[1];
+                numberDisplay.Value = 0.ToString();
+
+                var allNumberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[2].Cells[2];
+                allNumberDisplay.Value = context.ExperimentSetting.FirstOrDefault(x => x.Name == "Предъявлений").Value;
+                dataGridView1.Rows[2].DefaultCellStyle.BackColor = Color.Red;
             }
 
             var experimentResult3 = context.Experiment4Result.Where(x => x.IdUser == id).ToList();
@@ -150,7 +192,21 @@ namespace VisualPerception.Student
                 else
                 {
                     dataGridView1.Rows[3].DefaultCellStyle.BackColor = Color.Red;
-                }   
+                }
+            }
+            else
+            {
+                dataGridView1.Rows.Add();
+
+                var name = (DataGridViewTextBoxCell)dataGridView1.Rows[3].Cells[0];
+                name.Value = "Опыт №4";
+
+                var numberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[3].Cells[1];
+                numberDisplay.Value = 0.ToString();
+
+                var allNumberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[3].Cells[2];
+                allNumberDisplay.Value = context.ExperimentSetting.FirstOrDefault(x => x.Name == "Предъявлений").Value;
+                dataGridView1.Rows[3].DefaultCellStyle.BackColor = Color.Red;
             }
 
             var experimentResult4 = context.Experiment5Result.Where(x => x.IdUser == id).ToList();
@@ -176,7 +232,21 @@ namespace VisualPerception.Student
                 else
                 {
                     dataGridView1.Rows[4].DefaultCellStyle.BackColor = Color.Red;
-                }   
+                }
+            }
+            else
+            {
+                dataGridView1.Rows.Add();
+
+                var name = (DataGridViewTextBoxCell)dataGridView1.Rows[4].Cells[0];
+                name.Value = "Опыт №5";
+
+                var numberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[4].Cells[1];
+                numberDisplay.Value = 0.ToString();
+
+                var allNumberDisplay = (DataGridViewTextBoxCell)dataGridView1.Rows[4].Cells[2];
+                allNumberDisplay.Value = context.ExperimentSetting.FirstOrDefault(x => x.Name == "Предъявлений").Value;
+                dataGridView1.Rows[4].DefaultCellStyle.BackColor = Color.Red;
             }
 
         }
@@ -193,12 +263,63 @@ namespace VisualPerception.Student
             var experimentResult3 = context.Experiment4Result.Where(x => x.IdUser == _id).ToList();
             var experimentResult4 = context.Experiment5Result.Where(x => x.IdUser == _id).ToList();
 
+            var count = int.Parse(context.ExperimentSetting.FirstOrDefault(x => x.Name == "Предъявлений").Value);
+            
+            Experiment1Result rez = new Experiment1Result();
+            if (experimentResult.Count != 0)
+            {
+                rez = experimentResult[experimentResult.Count - 1];
+            }
+            else
+            {
+                rez.NumberDisplay = 0;
+                rez.AllNumberDisplay = count;
+            }
 
-            var rez = experimentResult[experimentResult.Count - 1];
-            var rez1 = experimentResult1[experimentResult1.Count - 1];
-            var rez2 = experimentResult2[experimentResult2.Count - 1];
-            var rez3 = experimentResult3[experimentResult3.Count - 1];
-            var rez4 = experimentResult4[experimentResult4.Count - 1];
+            Experiment2Result rez1 = new Experiment2Result();
+            if (experimentResult.Count != 0)
+            {
+                rez1 = experimentResult1[experimentResult1.Count - 1];
+            }
+            else
+            {
+                rez1.NumberDisplay = 0;
+                rez1.AllNumberDisplay = count;
+            }
+
+            Experiment3Result rez2 = new Experiment3Result();
+            if (experimentResult.Count != 0)
+            {
+                rez2 = experimentResult2[experimentResult2.Count - 1];
+            }
+            else
+            {
+                rez2.NumberDisplay = 0;
+                rez2.AllNumberDisplay = count;
+            }
+
+            Experiment4Result rez3 = new Experiment4Result();
+            if (experimentResult.Count != 0)
+            {
+                rez3 = experimentResult3[experimentResult3.Count - 1];
+            }
+            else
+            {
+                rez3.NumberDisplay = 0;
+                rez3.AllNumberDisplay = count;
+            }
+
+            Experiment5Result rez4 = new Experiment5Result();
+            if (experimentResult.Count != 0)
+            {
+                rez4 = experimentResult4[experimentResult4.Count - 1];
+            }
+            else
+            {
+                rez4.NumberDisplay = 0;
+                rez4.AllNumberDisplay = count;
+            }
+
             switch (name)
             {
                 case "Опыт №1":
